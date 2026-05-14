@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.CfdisRelacionadosPadre" table="CFDIS_RELACIONADOS_PADRE" catalog="xsa">
+        <id name="idCfdRelacionadoPadre" type="java.lang.Integer">
+            <column name="IDCFD_RELACIONADO_PADRE" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cfds" class="com.iqtb.POJOs.Cfds" fetch="select">
+            <column name="CFDS_idCFD" not-null="true" />
+        </many-to-one>
+        <property name="tipoCfdPadre" type="string">
+            <column name="TIPO_CFD_PADRE" not-null="true" />
+        </property>
+        <property name="tipoRelacion" type="string">
+            <column name="TIPO_RELACION" not-null="true" />
+        </property>
+        <set name="cfdisRelacionadosHijo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CFDIS_RELACIONADOS_PADRE_IDCFD_RELACIONADO_PADRE" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.CfdisRelacionadosHijo" />
+        </set>
+    </class>
+</hibernate-mapping>

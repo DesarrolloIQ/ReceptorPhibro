@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.Servicios" table="SERVICIOS" catalog="xsa">
+        <id name="idServicio" type="java.lang.Integer">
+            <column name="idSERVICIO" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="servidores" class="com.iqtb.POJOs.Servidores" fetch="select">
+            <column name="idSERVIDOR" not-null="true" />
+        </many-to-one>
+        <property name="servicio" type="string">
+            <column name="SERVICIO" not-null="true" />
+        </property>
+        <property name="propiedad" type="string">
+            <column name="PROPIEDAD" not-null="true" />
+        </property>
+        <property name="valor" type="string">
+            <column name="VALOR" length="65535" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="65535" />
+        </property>
+        <property name="visible" type="java.lang.Boolean">
+            <column name="VISIBLE" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="TIPO" length="8" not-null="true" />
+        </property>
+        <property name="requerido" type="java.lang.Boolean">
+            <column name="REQUERIDO" />
+        </property>
+    </class>
+</hibernate-mapping>

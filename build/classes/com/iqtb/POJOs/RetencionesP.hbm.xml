@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.RetencionesP" table="RETENCIONES_P" catalog="xsa">
+        <id name="idRetencionP" type="java.lang.Integer">
+            <column name="IDRETENCION_P" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pagos" class="com.iqtb.POJOs.Pagos" fetch="select">
+            <column name="PAGOS_IDPAGO" not-null="true" />
+        </many-to-one>
+        <property name="impuestoP" type="java.math.BigDecimal">
+            <column name="IMPUESTO_P" not-null="true" />
+        </property>
+        <property name="importeP" type="java.math.BigDecimal">
+            <column name="IMPORTE_P" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

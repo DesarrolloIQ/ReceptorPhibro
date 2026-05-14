@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.ArchivosSincronizacion" table="ARCHIVOS_SINCRONIZACION" catalog="xsa">
+        <id name="idArchivo" type="java.lang.Integer">
+            <column name="idARCHIVO" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="sucursales" class="com.iqtb.POJOs.Sucursales" fetch="select">
+            <column name="idSUCURSAL" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" not-null="true" />
+        </property>
+        <property name="estado" type="int">
+            <column name="ESTADO" not-null="true" />
+        </property>
+        <property name="pathArchivo" type="string">
+            <column name="PATH_ARCHIVO" />
+        </property>
+        <property name="tamano" type="java.lang.Integer">
+            <column name="TAMANO" />
+        </property>
+        <property name="fecha" type="timestamp">
+            <column name="FECHA" length="19" not-null="true" />
+        </property>
+        <property name="md5" type="string">
+            <column name="MD5" />
+        </property>
+        <property name="noCfds" type="java.lang.Integer">
+            <column name="NO_CFDS" />
+        </property>
+        <property name="idCfdsList" type="string">
+            <column name="idCFDS_LIST" length="65535" />
+        </property>
+        <set name="cfdses" inverse="true">
+            <key>
+                <column name="idARCHIVO_SINCRONIZACION" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.Cfds" />
+        </set>
+    </class>
+</hibernate-mapping>

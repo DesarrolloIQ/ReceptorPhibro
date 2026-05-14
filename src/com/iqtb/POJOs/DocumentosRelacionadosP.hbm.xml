@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.DocumentosRelacionadosP" table="DOCUMENTOS_RELACIONADOS_P" catalog="xsa">
+        <id name="idDocumentoRelacionadoP" type="java.lang.Integer">
+            <column name="ID_DOCUMENTO_RELACIONADO_P" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="pagos" class="com.iqtb.POJOs.Pagos" fetch="select">
+            <column name="PAGOS_IDPAGO" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfds" class="com.iqtb.POJOs.Cfds" fetch="select">
+            <column name="CFDS_idCFD" />
+        </many-to-one>
+        <property name="idDocumento" type="string">
+            <column name="IDDOCUMENTO" length="36" not-null="true" />
+        </property>
+        <property name="serie" type="string">
+            <column name="SERIE" length="25" />
+        </property>
+        <property name="folio" type="string">
+            <column name="FOLIO" length="40" />
+        </property>
+        <property name="monedaDr" type="string">
+            <column name="MONEDA_DR" length="45" />
+        </property>
+        <property name="equivalenciaDr" type="java.math.BigDecimal">
+            <column name="EQUIVALENCIA_DR" />
+        </property>
+        <property name="numParcialidad" type="java.lang.Integer">
+            <column name="NUM_PARCIALIDAD" not-null="true" />
+        </property>
+        <property name="importeSaldoAnterior" type="java.math.BigDecimal">
+            <column name="IMPORTE_SALDO_ANTERIOR" not-null="true" />
+        </property>
+        <property name="importePagado" type="java.math.BigDecimal">
+            <column name="IMPORTE_PAGADO" not-null="true" />
+        </property>
+        <property name="importeSaldoInsoluto" type="java.math.BigDecimal">
+            <column name="IMPORTE_SALDO_INSOLUTO" not-null="true" />
+        </property>
+        <property name="objetoImpuestosDr" type="string">
+            <column name="OBJETO_IMPUESTOS_DR" length="10" not-null="true" />
+        </property>
+        <property name="estadoRelacion" type="string">
+            <column name="ESTADO_RELACION" not-null="true" />
+        </property>
+        <property name="descripcionError" type="text">
+            <column name="DESCRIPCION_ERROR" />
+        </property>
+        <set name="retencionesDr" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DOCUMENTOS_RELACIONADOS_P_ID_DOCUMENTO_RELACIONADO_P" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.RetencionesDr" />
+        </set>
+        <set name="trasladosDr" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DOCUMENTOS_RELACIONADOS_P_ID_DOCUMENTO_RELACIONADO_P" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.TrasladosDr" />
+        </set>
+    </class>
+</hibernate-mapping>

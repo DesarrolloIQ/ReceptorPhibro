@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.TiposCfd" table="TIPOS_CFD" catalog="xsa">
+        <id name="idTipocfd" type="java.lang.Integer">
+            <column name="idTIPOCFD" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="conectorAdaptador" class="com.iqtb.POJOs.ConectorAdaptador" fetch="select">
+            <column name="idCON_ADP" />
+        </many-to-one>
+        <many-to-one name="empresas" class="com.iqtb.POJOs.Empresas" fetch="select">
+            <column name="idEMPRESA" not-null="true" />
+        </many-to-one>
+        <many-to-one name="catalogoPlantillas" class="com.iqtb.POJOs.CatalogoPlantillas" fetch="select">
+            <column name="idCATALOGOPLANTILLA" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="TIPO" length="8" not-null="true" />
+        </property>
+        <property name="stylusConector" type="string">
+            <column name="STYLUS_CONECTOR" length="16777215" />
+        </property>
+        <property name="xsltToTralix" type="string">
+            <column name="XSLT_TO_TRALIX" length="16777215" />
+        </property>
+        <property name="modoManual" type="boolean">
+            <column name="MODO_MANUAL" not-null="true" />
+        </property>
+        <property name="reload" type="boolean">
+            <column name="RELOAD" not-null="true" />
+        </property>
+        <property name="encoding" type="string">
+            <column name="ENCODING" length="20" />
+        </property>
+        <property name="modo" type="string">
+            <column name="MODO" length="9" />
+        </property>
+        <property name="tipoUso" type="string">
+            <column name="TIPO_USO" length="7" not-null="true" />
+        </property>
+        <set name="cfdses" inverse="true">
+            <key>
+                <column name="idTIPOCFD" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.Cfds" />
+        </set>
+        <set name="documentosRecibidoses" inverse="true">
+            <key>
+                <column name="idTIPOCFD" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.DocumentosRecibidos" />
+        </set>
+        <set name="usuariosRecepcions" inverse="true" cascade="none">
+            <key>
+                <column name="idTIPOCFD" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.UsuariosRecepcion" />
+        </set>
+    </class>
+</hibernate-mapping>

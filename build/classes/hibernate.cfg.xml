@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/xsa?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">ReceptoPhibro</property>
+    <property name="hibernate.connection.password">mysql</property>
+    <mapping resource="com/iqtb/POJOs/UsuariosRecepcion.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/TiposCfd.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/Servidores.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/Servicios.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/Clientes.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/ArchivosSincronizacion.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/CustomerKeys.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/CertificadosSucursales.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/ErroresGeneracion.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/ConectorAdaptador.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/ConfiguracionLayout.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/CatalogoPlantillas.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/Sucursales.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/Empresas.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/Cfds.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/DocumentosRecibidos.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/Xmls.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/RegimenFiscal.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/CfdisPagos.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/Pagos.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/RetencionesP.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/TrasladosP.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/DocumentosRelacionadosP.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/RetencionesDr.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/TrasladosDr.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/CfdisRelacionadosPadre.hbm.xml"/>
+    <mapping resource="com/iqtb/POJOs/CfdisRelacionadosHijo.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

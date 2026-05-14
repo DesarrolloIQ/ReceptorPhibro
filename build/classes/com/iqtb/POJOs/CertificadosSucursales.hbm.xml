@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.CertificadosSucursales" table="CERTIFICADOS_SUCURSALES" catalog="xsa">
+        <id name="idCertificado" type="java.lang.Integer">
+            <column name="idCERTIFICADO" />
+            <generator class="identity" />
+        </id>
+        <property name="certificado" type="string">
+            <column name="CERTIFICADO" length="65535" />
+        </property>
+        <property name="validode" type="timestamp">
+            <column name="VALIDODE" length="19" not-null="true" />
+        </property>
+        <property name="validohasta" type="timestamp">
+            <column name="VALIDOHASTA" length="19" not-null="true" />
+        </property>
+        <property name="pkey" type="string">
+            <column name="PKEY" length="65535" />
+        </property>
+        <property name="passwd" type="string">
+            <column name="PASSWD" length="65535" />
+        </property>
+        <property name="serie" type="string">
+            <column name="SERIE" length="25" />
+        </property>
+        <property name="estado" type="string">
+            <column name="ESTADO" length="13" />
+        </property>
+        <property name="ultimaVerificacion" type="timestamp">
+            <column name="ULTIMA_VERIFICACION" length="19" not-null="true">
+                <comment>Fecha de &#250;ltima revisi&#243;n</comment>
+            </column>
+        </property>
+        <set name="sucursaleses" inverse="true">
+            <key>
+                <column name="idCERTIFICADO" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.Sucursales" />
+        </set>
+    </class>
+</hibernate-mapping>

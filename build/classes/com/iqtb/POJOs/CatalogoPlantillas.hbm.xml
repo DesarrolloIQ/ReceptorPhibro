@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.CatalogoPlantillas" table="CATALOGO_PLANTILLAS" catalog="xsa">
+        <id name="idPlantilla" type="java.lang.Integer">
+            <column name="idPLANTILLA" />
+            <generator class="identity" />
+        </id>
+        <property name="idEmpresa" type="java.lang.Integer">
+            <column name="idEMPRESA" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="50" not-null="true" />
+        </property>
+        <property name="url" type="string">
+            <column name="URL" length="50" not-null="true" />
+        </property>
+        <property name="fechaAlta" type="timestamp">
+            <column name="FECHA_ALTA" length="19" />
+        </property>
+        <property name="reload" type="java.lang.Boolean">
+            <column name="RELOAD" />
+        </property>
+        <property name="base" type="java.lang.Boolean">
+            <column name="BASE">
+                <comment>indica si la platilla se genero desde la plantilla base</comment>
+            </column>
+        </property>
+        <property name="textColor" type="string">
+            <column name="TEXT_COLOR" length="10">
+                <comment>color para texto en plantilla base</comment>
+            </column>
+        </property>
+        <property name="headerColor" type="string">
+            <column name="HEADER_COLOR" length="10">
+                <comment>color para encabezados en plantilla base</comment>
+            </column>
+        </property>
+        <property name="backColor" type="string">
+            <column name="BACK_COLOR" length="10">
+                <comment>color para fondo en plantilla base</comment>
+            </column>
+        </property>
+        <set name="tiposCfds" inverse="true">
+            <key>
+                <column name="idCATALOGOPLANTILLA" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.TiposCfd" />
+        </set>
+    </class>
+</hibernate-mapping>

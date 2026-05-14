@@ -1,0 +1,1075 @@
+2026-04-27 19:39:53  INFO [main] (ReceptorPhibro) 69:  - ID: 495
+2026-04-27 19:39:53  INFO [main] (ReceptorPhibro) 70:  - Prueba para ver si esta compilando al 100
+2026-04-27 19:39:53  INFO [main] (ReceptorPhibro) 79:  - Tiempo: 5000
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 81:  - === INICIO Sprint 2: procesarCfdisDePago ===
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 96:  - === FIN Sprint 2: procesarCfdisDePago ===
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 275:  - === INICIO Sprint 4: procesarCfdisDeEgreso ===
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 290:  - === FIN Sprint 4: procesarCfdisDeEgreso ===
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 417:  - 
+
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 418:  - === INICIO Sprint 7: procesarCfdisDeIngreso ===
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 426:  - Lote de 43 CFDIs de egreso por procesar.
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 427:  - 
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39607
+2026-04-27 19:39:53 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39607 -> NO_PAGADO
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39607
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39624
+2026-04-27 19:39:53 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39624 -> NO_PAGADO
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39624
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39625
+2026-04-27 19:39:53 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39625 -> NO_PAGADO
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39625
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39627
+2026-04-27 19:39:53 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39627 -> NO_PAGADO
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39627
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39629
+2026-04-27 19:39:53 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39629 -> NO_PAGADO
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39629
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39630
+2026-04-27 19:39:53 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39630 -> NO_PAGADO
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39630
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39631
+2026-04-27 19:39:53 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39631 -> NO_PAGADO
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39631
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39632
+2026-04-27 19:39:53 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39632 -> NO_PAGADO
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39632
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39633
+2026-04-27 19:39:53 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39633 -> NO_PAGADO
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39633
+2026-04-27 19:39:53  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:53  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39634
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39634 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39634
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39635
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39635 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39635
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39636
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39636 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39636
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39637
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39637 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39637
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39638
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39638 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39638
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39639
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39639 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39639
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39640
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39640 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39640
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39642
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39642 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39642
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39643
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39643 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39643
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39645
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39645 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39645
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39646
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39646 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39646
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39647
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39647 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39647
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39648
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39648 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39648
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39649
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39649 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39649
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39650
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39650 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39650
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39651
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39651 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39651
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39653
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39653 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39653
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39654
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39654 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39654
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39655
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39655 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39655
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39656
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39656 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39656
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39657
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39657 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39657
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39659
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39659 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39659
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39660
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39660 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39660
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39661
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39661 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39661
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39662
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39662 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39662
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39663
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39663 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39663
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39664
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39664 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39664
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39665
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39665 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39665
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39666
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39666 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39666
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39667
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39667 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39667
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39668
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39668 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39668
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39670
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39670 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39670
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39672
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39672 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39672
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39673
+2026-04-27 19:39:54 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39673 -> NO_PAGADO
+2026-04-27 19:39:54  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39673
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:54  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 433:  - === FIN Sprint 7: procesarCfdisDeIngreso ===
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 81:  - === INICIO Sprint 2: procesarCfdisDePago ===
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 96:  - === FIN Sprint 2: procesarCfdisDePago ===
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 275:  - === INICIO Sprint 4: procesarCfdisDeEgreso ===
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 290:  - === FIN Sprint 4: procesarCfdisDeEgreso ===
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 417:  - 
+
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 418:  - === INICIO Sprint 7: procesarCfdisDeIngreso ===
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 426:  - Lote de 43 CFDIs de egreso por procesar.
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 427:  - 
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39607
+2026-04-27 19:39:59 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39607 -> NO_PAGADO
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39607
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39624
+2026-04-27 19:39:59 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39624 -> NO_PAGADO
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39624
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39625
+2026-04-27 19:39:59 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39625 -> NO_PAGADO
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39625
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39627
+2026-04-27 19:39:59 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39627 -> NO_PAGADO
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39627
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39629
+2026-04-27 19:39:59 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39629 -> NO_PAGADO
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39629
+2026-04-27 19:39:59  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:39:59  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39630
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39630 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39630
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39631
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39631 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39631
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39632
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39632 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39632
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39633
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39633 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39633
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39634
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39634 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39634
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39635
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39635 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39635
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39636
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39636 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39636
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39637
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39637 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39637
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39638
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39638 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39638
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39639
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39639 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39639
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39640
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39640 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39640
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39642
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39642 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39642
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39643
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39643 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39643
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39645
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39645 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39645
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39646
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39646 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39646
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39647
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39647 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39647
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39648
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39648 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39648
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39649
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39649 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39649
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39650
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39650 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39650
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39651
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39651 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39651
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39653
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39653 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39653
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39654
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39654 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39654
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39655
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39655 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39655
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39656
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39656 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39656
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39657
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39657 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39657
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39659
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39659 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39659
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39660
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39660 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39660
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39661
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39661 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39661
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39662
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39662 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39662
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39663
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39663 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39663
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39664
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39664 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39664
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39665
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39665 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39665
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39666
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39666 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39666
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39667
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39667 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39667
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39668
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39668 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39668
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39670
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39670 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39670
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39672
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39672 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39672
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39673
+2026-04-27 19:40:00 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39673 -> NO_PAGADO
+2026-04-27 19:40:00  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39673
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:00  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 433:  - === FIN Sprint 7: procesarCfdisDeIngreso ===
+2026-04-27 19:40:05  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 81:  - === INICIO Sprint 2: procesarCfdisDePago ===
+2026-04-27 19:40:05  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 96:  - === FIN Sprint 2: procesarCfdisDePago ===
+2026-04-27 19:40:05  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 275:  - === INICIO Sprint 4: procesarCfdisDeEgreso ===
+2026-04-27 19:40:05  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 290:  - === FIN Sprint 4: procesarCfdisDeEgreso ===
+2026-04-27 19:40:05  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 417:  - 
+
+2026-04-27 19:40:05  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 418:  - === INICIO Sprint 7: procesarCfdisDeIngreso ===
+2026-04-27 19:40:05  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 426:  - Lote de 43 CFDIs de egreso por procesar.
+2026-04-27 19:40:05  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 427:  - 
+2026-04-27 19:40:05  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39607
+2026-04-27 19:40:05 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:05  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39607 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39607
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39624
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39624 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39624
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39625
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39625 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39625
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39627
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39627 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39627
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39629
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39629 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39629
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39630
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39630 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39630
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39631
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39631 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39631
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39632
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39632 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39632
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39633
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39633 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39633
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39634
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39634 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39634
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39635
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39635 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39635
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39636
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39636 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39636
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39637
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39637 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39637
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39638
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39638 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39638
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39639
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39639 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39639
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39640
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39640 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39640
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39642
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39642 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39642
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39643
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39643 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39643
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39645
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39645 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39645
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39646
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39646 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39646
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39647
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39647 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39647
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39648
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39648 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39648
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39649
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39649 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39649
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39650
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39650 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39650
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39651
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39651 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39651
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39653
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39653 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39653
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39654
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39654 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39654
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39655
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39655 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39655
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39656
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39656 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39656
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39657
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39657 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39657
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39659
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39659 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39659
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39660
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39660 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39660
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39661
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39661 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39661
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39662
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39662 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39662
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39663
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39663 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39663
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39664
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39664 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39664
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39665
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39665 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39665
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39666
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39666 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39666
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39667
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39667 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39667
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39668
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39668 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39668
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39670
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39670 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39670
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39672
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39672 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39672
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39673
+2026-04-27 19:40:06 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39673 -> NO_PAGADO
+2026-04-27 19:40:06  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39673
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:06  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 433:  - === FIN Sprint 7: procesarCfdisDeIngreso ===
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 81:  - === INICIO Sprint 2: procesarCfdisDePago ===
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 96:  - === FIN Sprint 2: procesarCfdisDePago ===
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 275:  - === INICIO Sprint 4: procesarCfdisDeEgreso ===
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 290:  - === FIN Sprint 4: procesarCfdisDeEgreso ===
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 417:  - 
+
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 418:  - === INICIO Sprint 7: procesarCfdisDeIngreso ===
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 426:  - Lote de 43 CFDIs de egreso por procesar.
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 427:  - 
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39607
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39607 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39607
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39624
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39624 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39624
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39625
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39625 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39625
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39627
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39627 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39627
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39629
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39629 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39629
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39630
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39630 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39630
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39631
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39631 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39631
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39632
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39632 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39632
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39633
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39633 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39633
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39634
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39634 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39634
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39635
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39635 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39635
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39636
+2026-04-27 19:40:11 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39636 -> NO_PAGADO
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39636
+2026-04-27 19:40:11  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:11  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39637
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39637 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39637
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39638
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39638 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39638
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39639
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39639 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39639
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39640
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39640 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39640
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39642
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39642 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39642
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39643
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39643 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39643
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39645
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39645 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39645
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39646
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39646 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39646
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39647
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39647 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39647
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39648
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39648 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39648
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39649
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39649 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39649
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39650
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39650 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39650
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39651
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39651 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39651
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39653
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39653 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39653
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39654
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39654 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39654
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39655
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39655 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39655
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39656
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39656 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39656
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39657
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39657 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39657
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39659
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39659 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39659
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39660
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39660 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39660
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39661
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39661 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39661
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39662
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39662 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39662
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39663
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39663 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39663
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39664
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39664 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39664
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39665
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39665 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39665
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39666
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39666 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39666
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39667
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39667 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39667
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39668
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39668 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39668
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39670
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39670 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39670
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39672
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39672 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39672
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'REVISANDO' para idCFD=39673
+2026-04-27 19:40:12 ERROR [main] (com.iqtb.DAOs.DocumentosRelacionadosPDAO) 36:  - Error en getPagosDeIngreso: could not execute query
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 524:  - idCFD=39673 -> NO_PAGADO
+2026-04-27 19:40:12  INFO [main] (CfdsDAO) 290:  - FECHA_PEDIMENTO actualizada a 'NO_PAGADO' para idCFD=39673
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 526:  - 
+
+2026-04-27 19:40:12  INFO [main] (com.iqtb.utils.ProcesadorCfdisService) 433:  - === FIN Sprint 7: procesarCfdisDeIngreso ===

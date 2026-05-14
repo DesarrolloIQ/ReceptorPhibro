@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.DocumentosRecibidos" table="DOCUMENTOS_RECIBIDOS" catalog="xsa">
+        <id name="idArchivo" type="java.lang.Integer">
+            <column name="idARCHIVO" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="sucursales" class="com.iqtb.POJOs.Sucursales" fetch="select">
+            <column name="idSUCURSAL" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tiposCfd" class="com.iqtb.POJOs.TiposCfd" fetch="select">
+            <column name="idTIPOCFD" not-null="true" />
+        </many-to-one>
+        <property name="idCfd" type="java.lang.Integer">
+            <column name="idCFD" />
+        </property>
+        <property name="identificador" type="java.lang.Long">
+            <column name="IDENTIFICADOR" />
+        </property>
+        <property name="cliente" type="string">
+            <column name="CLIENTE" />
+        </property>
+        <property name="fechaRecepcion" type="timestamp">
+            <column name="FECHA_RECEPCION" length="19" not-null="true" />
+        </property>
+        <property name="archivo" type="string">
+            <column name="ARCHIVO" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="ESTADO" length="14" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="TIPO" length="14" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" />
+        </property>
+        <property name="error" type="string">
+            <column name="ERROR" length="16777215" />
+        </property>
+        <property name="reportado" type="java.lang.Boolean">
+            <column name="REPORTADO" />
+        </property>
+        <property name="idGenerator" type="int">
+            <column name="idGENERATOR" not-null="true" />
+        </property>
+        <property name="hugeFile" type="boolean">
+            <column name="HUGE_FILE" not-null="true" />
+        </property>
+        <property name="idMetadata" type="java.lang.Integer">
+            <column name="idMETADATA" />
+        </property>
+        <property name="columna0" type="string">
+            <column name="COLUMNA0" />
+        </property>
+        <property name="columna1" type="string">
+            <column name="COLUMNA1" />
+        </property>
+        <property name="columna2" type="string">
+            <column name="COLUMNA2" />
+        </property>
+        <property name="columna3" type="string">
+            <column name="COLUMNA3" />
+        </property>
+        <property name="columna4" type="string">
+            <column name="COLUMNA4" />
+        </property>
+        <property name="columna5" type="string">
+            <column name="COLUMNA5" />
+        </property>
+        <property name="columna6" type="string">
+            <column name="COLUMNA6" />
+        </property>
+        <property name="columna7" type="string">
+            <column name="COLUMNA7" />
+        </property>
+        <property name="columna8" type="string">
+            <column name="COLUMNA8" />
+        </property>
+        <property name="columna9" type="string">
+            <column name="COLUMNA9" />
+        </property>
+        <property name="columna10" type="string">
+            <column name="COLUMNA10" />
+        </property>
+        <property name="columna11" type="string">
+            <column name="COLUMNA11" />
+        </property>
+        <property name="columna12" type="string">
+            <column name="COLUMNA12" />
+        </property>
+        <property name="columna13" type="string">
+            <column name="COLUMNA13" />
+        </property>
+        <property name="columna14" type="string">
+            <column name="COLUMNA14" />
+        </property>
+        <property name="columna15" type="string">
+            <column name="COLUMNA15" />
+        </property>
+        <property name="columna16" type="string">
+            <column name="COLUMNA16" />
+        </property>
+        <property name="columna17" type="string">
+            <column name="COLUMNA17" />
+        </property>
+        <property name="columna18" type="string">
+            <column name="COLUMNA18" />
+        </property>
+        <property name="columna19" type="string">
+            <column name="COLUMNA19" />
+        </property>
+        <set name="erroresGeneracions" inverse="true">
+            <key>
+                <column name="idARCHIVO" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.ErroresGeneracion" />
+        </set>
+    </class>
+</hibernate-mapping>

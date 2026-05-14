@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.CfdisRelacionadosHijo" table="CFDIS_RELACIONADOS_HIJO" catalog="xsa">
+        <id name="idCfdRelacionadoHijo" type="java.lang.Integer">
+            <column name="IDCFD_RELACIONADO_HIJO" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cfdisRelacionadosPadre" class="com.iqtb.POJOs.CfdisRelacionadosPadre" fetch="select">
+            <column name="CFDIS_RELACIONADOS_PADRE_IDCFD_RELACIONADO_PADRE" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfds" class="com.iqtb.POJOs.Cfds" fetch="select">
+            <column name="CFDS_idCFD" />
+        </many-to-one>
+        <property name="uuid" type="string">
+            <column name="UUID" length="36" />
+        </property>
+        <property name="tipoCfdHijo" type="string">
+            <column name="TIPO_CFD_HIJO" />
+        </property>
+        <property name="estadoRelacion" type="string">
+            <column name="ESTADO_RELACION" />
+        </property>
+        <property name="descripcionError" type="string">
+            <column name="DESCRIPCION_ERROR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

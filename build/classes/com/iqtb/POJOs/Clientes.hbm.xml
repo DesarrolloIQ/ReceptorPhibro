@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.Clientes" table="CLIENTES" catalog="xsa">
+        <id name="idCliente" type="java.lang.Integer">
+            <column name="idCLIENTE" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empresas" class="com.iqtb.POJOs.Empresas" fetch="select">
+            <column name="idEMPRESA" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" />
+        </property>
+        <property name="rfc" type="string">
+            <column name="RFC" length="13" not-null="true" />
+        </property>
+        <property name="identificador" type="string">
+            <column name="IDENTIFICADOR" />
+        </property>
+        <property name="requiereAddenda" type="java.lang.Boolean">
+            <column name="REQUIERE_ADDENDA" />
+        </property>
+        <property name="requiereEdifact" type="java.lang.Boolean">
+            <column name="REQUIERE_EDIFACT" />
+        </property>
+        <property name="calle" type="string">
+            <column name="CALLE" length="65535" />
+        </property>
+        <property name="numExterior" type="string">
+            <column name="NUM_EXTERIOR" />
+        </property>
+        <property name="numInterior" type="string">
+            <column name="NUM_INTERIOR" />
+        </property>
+        <property name="colonia" type="string">
+            <column name="COLONIA" length="65535" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="LOCALIDAD" length="65535" />
+        </property>
+        <property name="referencia" type="string">
+            <column name="REFERENCIA" length="65535" />
+        </property>
+        <property name="municipio" type="string">
+            <column name="MUNICIPIO" />
+        </property>
+        <property name="estado" type="string">
+            <column name="ESTADO" />
+        </property>
+        <property name="pais" type="string">
+            <column name="PAIS" not-null="true" />
+        </property>
+        <property name="cp" type="string">
+            <column name="CP" />
+        </property>
+        <property name="requiereAperak" type="java.lang.Boolean">
+            <column name="REQUIERE_APERAK" />
+        </property>
+        <property name="requiereContrl" type="java.lang.Boolean">
+            <column name="REQUIERE_CONTRL" />
+        </property>
+        <property name="codigogln" type="string">
+            <column name="CODIGOGLN" />
+        </property>
+        <property name="modoEnvio" type="string">
+            <column name="MODO_ENVIO" length="10" not-null="true" />
+        </property>
+        <property name="alias" type="string">
+            <column name="ALIAS">
+                <comment>Alias del cliente</comment>
+            </column>
+        </property>
+        <property name="idRegimen" type="java.lang.Integer">
+            <column name="idREGIMEN" />
+        </property>
+        <property name="contacto" type="string">
+            <column name="CONTACTO">
+                <comment>Nombre de la persona para contactar</comment>
+            </column>
+        </property>
+        <property name="emailContacto" type="string">
+            <column name="EMAIL_CONTACTO">
+                <comment>Correo electr&#243;nico para contactar al cliente</comment>
+            </column>
+        </property>
+        <property name="condicionesPago" type="string">
+            <column name="CONDICIONES_PAGO" length="65535">
+                <comment>Condicion de pago que se le otorga al cliente</comment>
+            </column>
+        </property>
+        <property name="esFrontera" type="java.lang.Byte">
+            <column name="ES_FRONTERA">
+                <comment>Bandera utilizada para saber si el cliente es frontera</comment>
+            </column>
+        </property>
+        <property name="telefono" type="string">
+            <column name="TELEFONO">
+                <comment>El telefono del cliente</comment>
+            </column>
+        </property>
+        <set name="cfdses" inverse="true">
+            <key>
+                <column name="idCLIENTE" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.Cfds" />
+        </set>
+    </class>
+</hibernate-mapping>

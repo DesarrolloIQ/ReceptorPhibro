@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.ConectorAdaptador" table="CONECTOR_ADAPTADOR" catalog="xsa">
+        <id name="idConectorAdaptador" type="java.lang.Integer">
+            <column name="idCONECTOR_ADAPTADOR" />
+            <generator class="identity" />
+        </id>
+        <property name="idEmpresa" type="java.lang.Integer">
+            <column name="idEMPRESA" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="50" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="250" />
+        </property>
+        <property name="stylusConector" type="string">
+            <column name="STYLUS_CONECTOR" length="16777215" />
+        </property>
+        <property name="xsltToTralix" type="string">
+            <column name="XSLT_TO_TRALIX" length="16777215" />
+        </property>
+        <property name="estado" type="string">
+            <column name="ESTADO" length="12" />
+        </property>
+        <set name="tiposCfds" inverse="true">
+            <key>
+                <column name="idCON_ADP" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.TiposCfd" />
+        </set>
+    </class>
+</hibernate-mapping>

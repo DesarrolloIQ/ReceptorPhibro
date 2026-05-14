@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.ConfiguracionLayout" table="CONFIGURACION_LAYOUT" catalog="xsa">
+        <id name="idLayout" type="java.lang.Integer">
+            <column name="idLAYOUT" />
+            <generator class="identity" />
+        </id>
+        <property name="idEmpresa" type="int">
+            <column name="idEMPRESA" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" not-null="true" />
+        </property>
+        <property name="json" type="string">
+            <column name="JSON" length="65535" not-null="true" />
+        </property>
+        <set name="usuariosRecepcions" inverse="true">
+            <key>
+                <column name="idLAYOUT" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.UsuariosRecepcion" />
+        </set>
+    </class>
+</hibernate-mapping>

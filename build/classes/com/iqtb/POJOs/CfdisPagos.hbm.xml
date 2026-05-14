@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.CfdisPagos" table="CFDIS_PAGOS" catalog="xsa">
+        <id name="idCfdiPago" type="java.lang.Integer">
+            <column name="IDCFDI_PAGO" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cfds" class="com.iqtb.POJOs.Cfds" fetch="select">
+            <column name="CFDS_idCFD" not-null="true" />
+        </many-to-one>
+        <property name="totalRetencionesIva" type="java.math.BigDecimal">
+            <column name="TOTAL_RETENCIONES_IVA" />
+        </property>
+        <property name="totalRetencionesIsr" type="java.math.BigDecimal">
+            <column name="TOTAL_RETENCIONES_ISR" />
+        </property>
+        <property name="totalRetencionesIeps" type="java.math.BigDecimal">
+            <column name="TOTAL_RETENCIONES_IEPS" />
+        </property>
+        <property name="totalTrasladosBaseIva16" type="java.math.BigDecimal">
+            <column name="TOTAL_TRASLADOS_BASE_IVA16" />
+        </property>
+        <property name="totalTrasladosImpuestoIva16" type="java.math.BigDecimal">
+            <column name="TOTAL_TRASLADOS_IMPUESTO_IVA16" />
+        </property>
+        <property name="totalTrasladosBaseIva8" type="java.math.BigDecimal">
+            <column name="TOTAL_TRASLADOS_BASE_IVA8" />
+        </property>
+        <property name="totalTrasladosImpuestoIva8" type="java.math.BigDecimal">
+            <column name="TOTAL_TRASLADOS_IMPUESTO_IVA8" />
+        </property>
+        <property name="totalTrasladosBaseIva0" type="java.math.BigDecimal">
+            <column name="TOTAL_TRASLADOS_BASE_IVA0" />
+        </property>
+        <property name="totalTrasladosImpuestoIvaExento" type="java.math.BigDecimal">
+            <column name="TOTAL_TRASLADOS_IMPUESTO_IVAEXENTO" />
+        </property>
+        <property name="montoTotalPagos" type="java.math.BigDecimal">
+            <column name="MONTO_TOTAL_PAGOS" />
+        </property>
+        <set name="pagos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CFDIS_PAGOS_IDCFDI_PAGO" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.Pagos" />
+        </set>
+    </class>
+</hibernate-mapping>

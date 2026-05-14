@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.Sucursales" table="SUCURSALES" catalog="xsa">
+        <id name="idSucursal" type="java.lang.Integer">
+            <column name="idSUCURSAL" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empresas" class="com.iqtb.POJOs.Empresas" fetch="select">
+            <column name="idEMPRESA" not-null="true" />
+        </many-to-one>
+        <many-to-one name="certificadosSucursales" class="com.iqtb.POJOs.CertificadosSucursales" fetch="select">
+            <column name="idCERTIFICADO" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" not-null="true" />
+        </property>
+        <property name="calle" type="string">
+            <column name="CALLE" length="65535" />
+        </property>
+        <property name="numExterior" type="string">
+            <column name="NUM_EXTERIOR" />
+        </property>
+        <property name="numInterior" type="string">
+            <column name="NUM_INTERIOR" />
+        </property>
+        <property name="colonia" type="string">
+            <column name="COLONIA" length="65535" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="LOCALIDAD" />
+        </property>
+        <property name="referencia" type="string">
+            <column name="REFERENCIA" length="65535" />
+        </property>
+        <property name="municipio" type="string">
+            <column name="MUNICIPIO" />
+        </property>
+        <property name="estado" type="string">
+            <column name="ESTADO" />
+        </property>
+        <property name="pais" type="string">
+            <column name="PAIS" not-null="true" />
+        </property>
+        <property name="cp" type="string">
+            <column name="CP" length="16" />
+        </property>
+        <property name="tiposucursal" type="string">
+            <column name="TIPOSUCURSAL" length="8" not-null="true" />
+        </property>
+        <property name="codigogln" type="string">
+            <column name="CODIGOGLN" />
+        </property>
+        <property name="claveSucursal" type="string">
+            <column name="CLAVE_SUCURSAL" />
+        </property>
+        <property name="extras" type="string">
+            <column name="EXTRAS" />
+        </property>
+        <property name="printWhenSend" type="java.lang.Boolean">
+            <column name="PRINT_WHEN_SEND" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="TELEFONO" />
+        </property>
+        <property name="esFrontera" type="boolean">
+            <column name="ES_FRONTERA" not-null="true">
+                <comment>Si la sucursal est&#225; en la frontera o no</comment>
+            </column>
+        </property>
+        <property name="lugarExpedicion" type="string">
+            <column name="LUGAR_EXPEDICION" />
+        </property>
+        <set name="archivosSincronizacions" inverse="true">
+            <key>
+                <column name="idSUCURSAL" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.ArchivosSincronizacion" />
+        </set>
+        <set name="cfdsesForIdSucursal" inverse="true">
+            <key>
+                <column name="idSUCURSAL" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.Cfds" />
+        </set>
+        <set name="cfdsesForImprimirEn" inverse="true">
+            <key>
+                <column name="IMPRIMIR_EN" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.Cfds" />
+        </set>
+        <set name="documentosRecibidoses" inverse="true">
+            <key>
+                <column name="idSUCURSAL" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.DocumentosRecibidos" />
+        </set>
+        <set name="usuariosRecepcions" inverse="true">
+            <key>
+                <column name="idSUCURSAL" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.UsuariosRecepcion" />
+        </set>
+    </class>
+</hibernate-mapping>

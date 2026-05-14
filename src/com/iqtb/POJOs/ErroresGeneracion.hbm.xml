@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.ErroresGeneracion" table="ERRORES_GENERACION" catalog="xsa">
+        <id name="idError" type="java.lang.Integer">
+            <column name="idERROR" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="documentosRecibidos" class="com.iqtb.POJOs.DocumentosRecibidos" fetch="select">
+            <column name="idARCHIVO" not-null="true" />
+        </many-to-one>
+        <property name="pathXml" type="string">
+            <column name="PATH_XML" length="65535" not-null="true" />
+        </property>
+        <property name="descripcionXml" type="string">
+            <column name="DESCRIPCION_XML" length="65535" not-null="true" />
+        </property>
+        <property name="valorEncontrado" type="string">
+            <column name="VALOR_ENCONTRADO" />
+        </property>
+        <property name="error" type="string">
+            <column name="ERROR" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

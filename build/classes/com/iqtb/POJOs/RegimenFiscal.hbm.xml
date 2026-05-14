@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-may-2020 13:56:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.RegimenFiscal" table="REGIMEN_FISCAL" catalog="xsa">
+        <id name="idRegimen" type="int">
+            <column name="idREGIMEN" />
+            <generator class="identity" />
+        </id>
+        <property name="idTipoPersona" type="string">
+            <column name="idTIPO_PERSONA" length="2" not-null="true" />
+        </property>
+        <property name="claveRegimenFiscal" type="string">
+            <column name="CLAVE_REGIMEN_FISCAL" length="256" />
+        </property>
+        <property name="descripcionRegimen" type="string">
+            <column name="DESCRIPCION_REGIMEN" length="256" />
+        </property>
+        <property name="fechaInicioVigencia" type="timestamp">
+            <column name="FECHA_INICIO_VIGENCIA" length="19" />
+        </property>
+        <property name="fechaUltimaActualizacion" type="timestamp">
+            <column name="FECHA_ULTIMA_ACTUALIZACION" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

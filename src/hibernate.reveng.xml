@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="xsa"/>
+  <table-filter match-name="SERVIDORES"/>
+  <table-filter match-name="EMPRESAS"/>
+  <table-filter match-name="SUCURSALES"/>
+  <table-filter match-name="ERRORES_GENERACION"/>
+  <table-filter match-name="SERVICIOS"/>
+  <table-filter match-name="CFDS"/>
+  <table-filter match-name="USUARIOS_RECEPCION"/>
+  <table-filter match-name="CONECTOR_ADAPTADOR"/>
+  <table-filter match-name="CUSTOMER_KEYS"/>
+  <table-filter match-name="CLIENTES"/>
+  <table-filter match-name="ARCHIVOS_SINCRONIZACION"/>
+  <table-filter match-name="CATALOGO_PLANTILLAS"/>
+  <table-filter match-name="DOCUMENTOS_RECIBIDOS"/>
+  <table-filter match-name="CERTIFICADOS_SUCURSALES"/>
+  <table-filter match-name="CONFIGURACION_LAYOUT"/>
+  <table-filter match-name="TIPOS_CFD"/>
+  <table-filter match-name="XMLS"/>
+  <table-filter match-name="REGIMEN_FISCAL"/>
+</hibernate-reverse-engineering>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.Pagos" table="PAGOS" catalog="xsa">
+        <id name="idPago" type="java.lang.Integer">
+            <column name="IDPAGO" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cfdisPagos" class="com.iqtb.POJOs.CfdisPagos" fetch="select">
+            <column name="CFDIS_PAGOS_IDCFDI_PAGO" not-null="true" />
+        </many-to-one>
+        <property name="version" type="java.math.BigDecimal">
+            <column name="VERSION" not-null="true" />
+        </property>
+        <property name="fechaPago" type="timestamp">
+            <column name="FECHA_PAGO" not-null="true" />
+        </property>
+        <property name="formaPago" type="string">
+            <column name="FORMA_PAGO" not-null="true" />
+        </property>
+        <property name="monedaPago" type="string">
+            <column name="MONEDA_PAGO" length="4" not-null="true" />
+        </property>
+        <property name="tipoCambioPago" type="java.math.BigDecimal">
+            <column name="TIPO_CAMBIO_PAGO" not-null="true" />
+        </property>
+        <property name="montoPago" type="java.math.BigDecimal">
+            <column name="MONTO_PAGO" not-null="true" />
+        </property>
+        <property name="numOperacion" type="string">
+            <column name="NUM_OPERACION" length="10" />
+        </property>
+        <property name="rfcEmisorCtaOrd" type="string">
+            <column name="RFC_EMISOR_CTA_ORD" length="13" />
+        </property>
+        <property name="nombreBancoOrdExtranjero" type="string">
+            <column name="NOMBRE_BANCO_ORD_EXTRANJERO" length="300" />
+        </property>
+        <property name="cuentaOrdenante" type="string">
+            <column name="CUENTA_ORDENANTE" length="50" />
+        </property>
+        <property name="rfcEmisorCtaBeneficiario" type="string">
+            <column name="RFC_EMISOR_CTA_BENEFICIARIO" length="13" />
+        </property>
+        <property name="cuentaBeneficiario" type="string">
+            <column name="CUENTA_BENEFICIARIO" length="50" />
+        </property>
+        <property name="importeRetencion" type="java.math.BigDecimal">
+            <column name="IMPORTE_RETENCION" />
+        </property>
+        <property name="importeIvaTraslado" type="java.math.BigDecimal">
+            <column name="IMPORTE_IVA_TRASLADO_P" />
+        </property>
+        <property name="tasaIvaTraslado" type="java.math.BigDecimal">
+            <column name="TASA_IVA_TRASLADO_P" />
+        </property>
+        <set name="retencionesP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PAGOS_IDPAGO" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.RetencionesP" />
+        </set>
+        <set name="trasladosP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PAGOS_IDPAGO" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.TrasladosP" />
+        </set>
+        <set name="documentosRelacionadosP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PAGOS_IDPAGO" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.DocumentosRelacionadosP" />
+        </set>
+    </class>
+</hibernate-mapping>

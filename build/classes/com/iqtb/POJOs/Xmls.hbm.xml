@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-may-2020 13:56:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.Xmls" table="XMLS" catalog="xsa">
+        <id name="idCfd" type="int">
+            <column name="idCFD" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cfds" class="com.iqtb.POJOs.Cfds" update="false" insert="false" fetch="select">
+            <column name="idCFD" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="xmlTralix" type="string">
+            <column name="XML_TRALIX" />
+        </property>
+        <property name="xmlSat" type="string">
+            <column name="XML_SAT" />
+        </property>
+    </class>
+</hibernate-mapping>

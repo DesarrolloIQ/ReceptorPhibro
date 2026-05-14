@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/02/2016 11:11:31 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.iqtb.POJOs.Empresas" table="EMPRESAS" catalog="xsa">
+        <id name="idEmpresa" type="java.lang.Integer">
+            <column name="idEMPRESA" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customerKeys" class="com.iqtb.POJOs.CustomerKeys" fetch="select">
+            <column name="idCUSTOMERKEY" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" not-null="true" />
+        </property>
+        <property name="rfc" type="string">
+            <column name="RFC" length="13" not-null="true" unique="true" />
+        </property>
+        <property name="calle" type="string">
+            <column name="CALLE" length="65535" not-null="true" />
+        </property>
+        <property name="numExterior" type="string">
+            <column name="NUM_EXTERIOR" />
+        </property>
+        <property name="numInterior" type="string">
+            <column name="NUM_INTERIOR" />
+        </property>
+        <property name="colonia" type="string">
+            <column name="COLONIA" length="65535" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="LOCALIDAD" length="65535" />
+        </property>
+        <property name="referencia" type="string">
+            <column name="REFERENCIA" length="65535" />
+        </property>
+        <property name="municipio" type="string">
+            <column name="MUNICIPIO" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="ESTADO" not-null="true" />
+        </property>
+        <property name="pais" type="string">
+            <column name="PAIS" not-null="true" />
+        </property>
+        <property name="cp" type="string">
+            <column name="CP" length="16" not-null="true" />
+        </property>
+        <property name="multiCertificado" type="java.lang.Boolean">
+            <column name="MULTI_CERTIFICADO" />
+        </property>
+        <property name="multiXslt" type="java.lang.Boolean">
+            <column name="MULTI_XSLT" />
+        </property>
+        <property name="codigogln" type="string">
+            <column name="CODIGOGLN" />
+        </property>
+        <property name="onlyReception" type="java.lang.Boolean">
+            <column name="ONLY_RECEPTION" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="9" not-null="true" />
+        </property>
+        <property name="keyEmpresa" type="string">
+            <column name="KEY_EMPRESA" length="40" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL">
+                <comment>Correo electr&#243;nico</comment>
+            </column>
+        </property>
+        <property name="telefono" type="string">
+            <column name="TELEFONO">
+                <comment>N&#250;mero telef&#243;nico</comment>
+            </column>
+        </property>
+        <property name="curp" type="string">
+            <column name="CURP">
+                <comment>CURP</comment>
+            </column>
+        </property>
+        <property name="tieneAddenda" type="java.lang.Byte">
+            <column name="TIENE_ADDENDA">
+                <comment>Indicador para saber si tiene addenda</comment>
+            </column>
+        </property>
+        <property name="esFrontera" type="java.lang.Byte">
+            <column name="ES_FRONTERA">
+                <comment>Indicador para saber si se encuentra en territorio fronterizo</comment>
+            </column>
+        </property>
+        <property name="nombreArchivoLogo" type="string">
+            <column name="NOMBRE_ARCHIVO_LOGO">
+                <comment>Nombre del archivo que contiene el logotipo de la empresa</comment>
+            </column>
+        </property>
+        <property name="paginaWeb" type="string">
+            <column name="PAGINA_WEB">
+                <comment>P&#225;gina Web</comment>
+            </column>
+        </property>
+        <property name="isBorder" type="boolean">
+            <column name="IS_BORDER" not-null="true" />
+        </property>
+        <property name="cfdVersion" type="string">
+            <column name="CFD_VERSION" length="12" not-null="true" />
+        </property>
+        <property name="nombreContacto" type="string">
+            <column name="NOMBRE_CONTACTO">
+                <comment>Nombre del contacto</comment>
+            </column>
+        </property>
+        <set name="sucursaleses" inverse="true">
+            <key>
+                <column name="idEMPRESA" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.Sucursales" />
+        </set>
+        <set name="clienteses" inverse="true">
+            <key>
+                <column name="idEMPRESA" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.Clientes" />
+        </set>
+        <set name="tiposCfds" inverse="true">
+            <key>
+                <column name="idEMPRESA" not-null="true" />
+            </key>
+            <one-to-many class="com.iqtb.POJOs.TiposCfd" />
+        </set>
+    </class>
+</hibernate-mapping>
