@@ -6,6 +6,7 @@ package com.iqtb.DAOs;
 
 import com.iqtb.POJOs.Cfds;
 import com.iqtb.Session.HibernateUtil;
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 import org.apache.log4j.Logger;
@@ -261,7 +262,7 @@ public class CfdsDAO {
         iniciarOperacion();
         String hql = "select idCfd from Cfds " +
                      "where tipoCfd = :tipoCfd " +
-                     "and (fechaPedimento is null   or fechaPedimento = 'PAGO_PARCIAL_PPD'  or fechaPedimento = 'NO_PAGADO') " +
+                     "and (fechaPedimento is null   or fechaPedimento = 'PENDIENTE_REVISION') " +
                      (ultimoIdCfd != null ? "and idCfd > :ultimoIdCfd " : "") + "order by idCfd asc";
         Query query = session.createQuery(hql);
         query.setParameter("tipoCfd", tipoCfd);
@@ -328,6 +329,24 @@ public class CfdsDAO {
         }
         return (lista != null && !lista.isEmpty()) ? lista.get(0) : null;
     }
+    
+    public String getFechaPedimento(Integer idCfd) {
+       String resultado = null;
+        try {
+            iniciarOperacion();
+            String hql = "select fechaPedimento from Cfds where idCfd = :idCfd";
+            Query query = session.createQuery(hql);
+            query.setParameter("idCfd", idCfd);
+            resultado = (String) query.uniqueResult();
+            tx.commit();
+        } catch (HibernateException e) {
+            tx.rollback();
+            logger.error("Error en getFechaPedimento idCFD=" + idCfd + ": " + e.getMessage());
+        } finally {
+            if (session.isOpen()) session.close();
+        }
+        return resultado;
+    }
 
 
 
@@ -349,6 +368,45 @@ public class CfdsDAO {
             if (session.isOpen()) session.close();
         }
     }
+
+    
+    public BigDecimal obtenerTotalCfdiE(Integer idCfdiPadre) {
+
+        BigDecimal total = BigDecimal.ZERO;
+
+        try {
+
+            iniciarOperacion();
+
+            Query query = session.createQuery(
+                "select c.total " +
+                "from Cfds c " +
+                "where c.idCfd = :idCfdi"
+            );
+
+            query.setParameter("idCfdi", idCfdiPadre);
+
+            BigDecimal resultado = (BigDecimal) query.uniqueResult();
+
+            if (resultado != null) {
+                total = resultado;
+            }
+
+            tx.commit();
+
+        } catch (HibernateException e) {
+
+            tx.rollback();
+            logger.error("Error obtenerTotalCfdiE: " + e.getMessage());
+
+        } finally {
+
+            if (session.isOpen()) session.close();
+        }
+
+        return total;
+    }
+    
 
 
     private void iniciarOperacion() throws HibernateException {

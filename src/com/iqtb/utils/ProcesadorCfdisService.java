@@ -31,8 +31,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.PropertyConfigurator;
 
-
-
 /**
  * Servicio que implementa los Sprints 2(issue 14 y 15) y 4(issue 16 y 17):
  *
@@ -61,7 +59,7 @@ public class ProcesadorCfdisService {
     private final PagosDAO pagosDAO = new PagosDAO();
     private final DocumentosRelacionadosPDAO docRelPDAO = new DocumentosRelacionadosPDAO();
     private final CfdisRelacionadosDAO cfdisRelDAO = new CfdisRelacionadosDAO();
-    
+
     /*public static void main(String[] args) {
                 PropertyConfigurator.configure("configReceptorPhilbro/log4j.properties");
         
@@ -69,7 +67,6 @@ public class ProcesadorCfdisService {
         ProcesadorCfdisService procesadorCfdisService = new ProcesadorCfdisService();
         procesadorCfdisService.procesarCfdisDeIngreso();
     }*/
-
     // =========================================================================
     // SPRINT 2 – CFDIs de PAGO
     // =========================================================================
@@ -249,6 +246,20 @@ public class ProcesadorCfdisService {
                     drp.setEstadoRelacion("VALIDO");
                     logger.debug("Documento relacionado uuid=" + uuidDocRelacionado
                             + " -> idCFD=" + idCfdIngreso + " (VALIDO)");
+                    
+                    String estadoActual = cfdsDAO.getFechaPedimento(idCfdIngreso);
+                    boolean noRequiereActualizacion = "PAGADO_PPD".equals(estadoActual)
+                            || "PAGADO_PUE".equals(estadoActual)
+                            || "ERROR_PUE".equals(estadoActual)
+                            || "NO_APLICA".equals(estadoActual)
+                            || "PENDIENTE_REVISION".equals(estadoActual); // ya está en cola, otro pago lo referencia también
+                    if (!noRequiereActualizacion) {
+                        cfdsDAO.actualizarFechaPedimento(idCfdIngreso, "PENDIENTE_REVISION");
+                        logger.debug("idCFD=" + idCfdIngreso + " marcado como PENDIENTE_REVISION");
+                    } else {
+                        logger.debug("idCFD=" + idCfdIngreso
+                                + " no se actualiza, estado actual: " + estadoActual);
+                    }
                 } else {
                     drp.setEstadoRelacion("ERROR");
                     drp.setDescripcionError("UUID " + uuidDocRelacionado + " no encontrado en BD");
@@ -272,7 +283,7 @@ public class ProcesadorCfdisService {
      * BATCH_SIZE.
      */
     public void procesarCfdisDeEgreso() {
-        
+
         logger.debug("=== INICIO Sprint 4: procesarCfdisDeEgreso ===");
         List<Integer> lote;
 
@@ -289,7 +300,7 @@ public class ProcesadorCfdisService {
         } while (lote.size() == BATCH_SIZE);
 
         logger.debug("=== FIN Sprint 4: procesarCfdisDeEgreso ===");
-        
+
     }
 
     /**
@@ -317,14 +328,14 @@ public class ProcesadorCfdisService {
         String version = leerAtributo(doc, "/cfdi:Comprobante/@Version", nsCfdi);
         String tipoCfd = leerAtributo(doc, "/cfdi:Comprobante/@TipoDeComprobante", nsCfdi);
 
-        if (version == null || version.isEmpty() || tipoCfd==null || tipoCfd.isEmpty() || !tipoCfd.equals("E") || Double.parseDouble(version) < 4.0) {
-            logger.debug("CFDI idCFD=" + idCfdEgreso + " es versión " + version + " y tipoCfd "+tipoCfd+", no se trabaja con él.");
+        if (version == null || version.isEmpty() || tipoCfd == null || tipoCfd.isEmpty() || !tipoCfd.equals("E") || Double.parseDouble(version) < 4.0) {
+            logger.debug("CFDI idCFD=" + idCfdEgreso + " es versión " + version + " y tipoCfd " + tipoCfd + ", no se trabaja con él.");
             return;
         }
 
         // Llenar padre y luego hijos
         llenarTablaCfdisRelacionadosPadre(idCfdEgreso, doc, nsCfdi);
-         logger.debug("\n");
+        logger.debug("\n");
     }
 
     /**
@@ -384,7 +395,7 @@ public class ProcesadorCfdisService {
 
                 CfdisRelacionadosHijo hijo = new CfdisRelacionadosHijo();
                 hijo.setCfdisRelacionadosPadre(padre);
-                
+
                 if (uuidRelacionado != null && uuidRelacionado.length() > 36) {
                     logger.error("Demasiado larga la cadena para  UUID:{" + uuidRelacionado + "}");
                 }
@@ -414,12 +425,11 @@ public class ProcesadorCfdisService {
                     + ": " + e.getMessage());
         }
     }
-    
+
     public void procesarCfdisDeIngreso() {
         logger.debug("\n");
         logger.debug("=== INICIO Sprint 7: procesarCfdisDeIngreso ===");
         List<Integer> lote;
-
         Integer ultimoIdCfd = null;
         do {
             lote = cfdsDAO.getIdCfdsPendientesPorTipoAndFechaPedimento("I", BATCH_SIZE, ultimoIdCfd);
@@ -436,100 +446,99 @@ public class ProcesadorCfdisService {
 
         logger.debug("=== FIN Sprint 7: procesarCfdisDeIngreso ===");
     }
-    
+
     public void validarEstadoPago(Integer idCfdIngreso) {
-    cfdsDAO.actualizarFechaPedimento(idCfdIngreso, "REVISANDO");
 
-    String xmlSat = xmlsDAO.getXmlSat(idCfdIngreso);
-    if (xmlSat == null || xmlSat.isEmpty()) {
-        logger.error("No se encontró XML_SAT para idCFD=" + idCfdIngreso);
-        logger.debug("\n");
-        return;
-    }
+        String xmlSat = xmlsDAO.getXmlSat(idCfdIngreso);
+        if (xmlSat == null || xmlSat.isEmpty()) {
+            logger.error("No se encontró XML_SAT para idCFD=" + idCfdIngreso);
+            logger.debug("\n");
+            return;
+        }
 
-    String nsCfdi    = detectarNamespaceCfdi(xmlSat);
-    Document doc     = parsearXml(xmlSat);
-    String version    = leerAtributo(doc, "/cfdi:Comprobante/@Version",           nsCfdi);
-    String tipoCfdi   = leerAtributo(doc, "/cfdi:Comprobante/@TipoDeComprobante", nsCfdi);
-    String metodoPago = leerAtributo(doc, "/cfdi:Comprobante/@MetodoPago",        nsCfdi);
+        String nsCfdi = detectarNamespaceCfdi(xmlSat);
+        Document doc = parsearXml(xmlSat);
+        String version = leerAtributo(doc, "/cfdi:Comprobante/@Version", nsCfdi);
+        String tipoCfdi = leerAtributo(doc, "/cfdi:Comprobante/@TipoDeComprobante", nsCfdi);
+        String metodoPago = leerAtributo(doc, "/cfdi:Comprobante/@MetodoPago", nsCfdi);
 
-    if (version == null || Double.parseDouble(version) < 4.0
-            || tipoCfdi == null || !tipoCfdi.equals("I")) {
-        logger.debug("idCFD=" + idCfdIngreso + " version=" + version
-                + " tipo=" + tipoCfdi + " -> NO_APLICA");
-        cfdsDAO.actualizarFechaPedimento(idCfdIngreso, "NO_APLICA");
-        logger.debug("\n");
-        return;
-    }
+        if (version == null || Double.parseDouble(version) < 4.0
+                || tipoCfdi == null || !tipoCfdi.equals("I")) {
+            logger.debug("idCFD=" + idCfdIngreso + " version=" + version
+                    + " tipo=" + tipoCfdi + " -> NO_APLICA");
+            cfdsDAO.actualizarFechaPedimento(idCfdIngreso, "NO_APLICA");
+            logger.debug("\n");
+            return;
+        }
 
-    // Obtener documentos relacionados filtrando solo CFDIs de pago VIGENTES
-    List<DocumentosRelacionadosP> docs = 
-            docRelPDAO.getPagosDeIngreso(idCfdIngreso); // ya filtra ESTADO_RELACION='VALIDO'
+        // Obtener documentos relacionados filtrando solo CFDIs de pago VIGENTES
+        List<DocumentosRelacionadosP> docs
+                = docRelPDAO.getPagosDeIngreso(idCfdIngreso); // ya filtra ESTADO_RELACION='VALIDO'
 
-    // Filtrar adicionalmente que el CFDI de pago padre esté VIGENTE en CFDS
-    List<DocumentosRelacionadosP> docsFiltrados = new ArrayList<>();
-    for (DocumentosRelacionadosP drp : docs) {
-        String estadoFiscal = obtenerEstatusGeneral(drp.getPagos().getCfdisPagos().getCfds().getEstadoFiscal());
-        if ("VIGENTE".equals(estadoFiscal)) {
-            docsFiltrados.add(drp);
+        // Filtrar adicionalmente que el CFDI de pago padre esté VIGENTE en CFDS
+        List<DocumentosRelacionadosP> docsFiltrados = new ArrayList<>();
+        for (DocumentosRelacionadosP drp : docs) {
+            String estadoFiscal = obtenerEstatusGeneral(drp.getPagos().getCfdisPagos().getCfds().getEstadoFiscal());
+            if ("VIGENTE".equals(estadoFiscal)) {
+                docsFiltrados.add(drp);
+            } else {
+                logger.debug("Pago idPago=" + drp.getPagos().getIdPago()
+                        + " ignorado, estadoFiscal=" + estadoFiscal);
+            }
+        }
+
+        boolean tienePagosPadre = !docsFiltrados.isEmpty();
+
+        if (tienePagosPadre) {
+            for (DocumentosRelacionadosP drp : docsFiltrados) {
+                Cfds cfdsPago = drp.getPagos().getCfdisPagos().getCfds();
+                logger.debug("Parcialidad #" + drp.getNumParcialidad()
+                        + " | CFDI Pago: " + cfdsPago.getSerie() + "-" + cfdsPago.getFolio()
+                        + " | Fecha: " + drp.getPagos().getFechaPago()
+                        + " | FormaPago: " + drp.getPagos().getFormaPago()
+                        + " | Saldo ant: " + drp.getImporteSaldoAnterior()
+                        + " | Pagado: " + drp.getImportePagado()
+                        + " | Saldo ins: " + drp.getImporteSaldoInsoluto());
+            }
+        }
+
+        // Ordenar por IMPORTE_SALDO_INSOLUTO de mayor a menor y tomar el más bajo
+        BigDecimal saldoMasBajo = null;
+        if (tienePagosPadre) {
+            saldoMasBajo = docsFiltrados.stream()
+                    .map(DocumentosRelacionadosP::getImporteSaldoInsoluto)
+                    .filter(s -> s != null)
+                    .min(BigDecimal::compareTo) // el más bajo
+                    .orElse(null);
+            logger.debug("Saldo insoluto más bajo: " + saldoMasBajo);
+        }
+
+        // Aplicar los 4 casos
+        String nuevaFechaPedimento;
+
+        if (tienePagosPadre && "PPD".equals(metodoPago)) {
+            if (saldoMasBajo != null && saldoMasBajo.compareTo(BigDecimal.ZERO) == 0) {
+                nuevaFechaPedimento = "PAGADO_PPD";
+            } else {
+                nuevaFechaPedimento = "PAGO_PARCIAL_PPD";
+            }
+        } else if (!tienePagosPadre && "PPD".equals(metodoPago)) {
+            nuevaFechaPedimento = "NO_PAGADO";
+        } else if (tienePagosPadre && "PUE".equals(metodoPago)) {
+            nuevaFechaPedimento = "ERROR_PUE";
+        } else if (!tienePagosPadre && "PUE".equals(metodoPago)) {
+            nuevaFechaPedimento = "PAGADO_PUE";
         } else {
-            logger.debug("Pago idPago=" + drp.getPagos().getIdPago()
-                    + " ignorado, estadoFiscal=" + estadoFiscal);
+            // MetodoPago desconocido
+            nuevaFechaPedimento = "NO_APLICA";
+            logger.warn("idCFD=" + idCfdIngreso + " MetodoPago desconocido: " + metodoPago);
         }
+
+        logger.debug("idCFD=" + idCfdIngreso + " -> " + nuevaFechaPedimento);
+        cfdsDAO.actualizarFechaPedimento(idCfdIngreso, nuevaFechaPedimento);
+        logger.debug("\n");
     }
 
-    boolean tienePagosPadre = !docsFiltrados.isEmpty();
-
-    if (tienePagosPadre) {
-        for (DocumentosRelacionadosP drp : docsFiltrados) {
-            Cfds cfdsPago = drp.getPagos().getCfdisPagos().getCfds();
-            logger.debug("Parcialidad #"  + drp.getNumParcialidad()
-                    + " | CFDI Pago: "  + cfdsPago.getSerie() + "-" + cfdsPago.getFolio()
-                    + " | Fecha: "      + drp.getPagos().getFechaPago()
-                    + " | FormaPago: "  + drp.getPagos().getFormaPago()
-                    + " | Saldo ant: "  + drp.getImporteSaldoAnterior()
-                    + " | Pagado: "     + drp.getImportePagado()
-                    + " | Saldo ins: "  + drp.getImporteSaldoInsoluto());
-        }
-    }
-
-    // Ordenar por IMPORTE_SALDO_INSOLUTO de mayor a menor y tomar el más bajo
-    BigDecimal saldoMasBajo = null;
-    if (tienePagosPadre) {
-        saldoMasBajo = docsFiltrados.stream()
-                .map(DocumentosRelacionadosP::getImporteSaldoInsoluto)
-                .filter(s -> s != null)
-                .min(BigDecimal::compareTo)  // el más bajo
-                .orElse(null);
-        logger.debug("Saldo insoluto más bajo: " + saldoMasBajo);
-    }
-
-    // Aplicar los 4 casos
-    String nuevaFechaPedimento;
-
-    if (tienePagosPadre && "PPD".equals(metodoPago)) {
-        if (saldoMasBajo != null && saldoMasBajo.compareTo(BigDecimal.ZERO) == 0) {
-            nuevaFechaPedimento = "PAGADO_PPD";
-        } else {
-            nuevaFechaPedimento = "PAGO_PARCIAL_PPD";
-        }
-    } else if (!tienePagosPadre && "PPD".equals(metodoPago)) {
-        nuevaFechaPedimento = "NO_PAGADO";
-    } else if (tienePagosPadre && "PUE".equals(metodoPago)) {
-        nuevaFechaPedimento = "ERROR_PUE";
-    } else if (!tienePagosPadre && "PUE".equals(metodoPago)) {
-        nuevaFechaPedimento = "PAGADO_PUE";
-    } else {
-        // MetodoPago desconocido
-        nuevaFechaPedimento = "NO_APLICA";
-        logger.warn("idCFD=" + idCfdIngreso + " MetodoPago desconocido: " + metodoPago);
-    }
-
-    logger.debug("idCFD=" + idCfdIngreso + " -> " + nuevaFechaPedimento);
-    cfdsDAO.actualizarFechaPedimento(idCfdIngreso, nuevaFechaPedimento);
-    logger.debug("\n");
-}
-    
     public static String obtenerEstatusGeneral(String estadoFiscal) {
         switch (estadoFiscal) {
             case "VIGENTE":
@@ -550,7 +559,7 @@ public class ProcesadorCfdisService {
                 return "CANCELADO";
         }
     }
-    
+
     private Document parsearXml(String xml) {
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -657,5 +666,5 @@ public class ProcesadorCfdisService {
             return null;
         }
     }
-    
+
 }

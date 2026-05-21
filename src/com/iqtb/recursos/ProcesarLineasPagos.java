@@ -8,6 +8,7 @@ import com.iqtb.DAOs.CfdsDAO;
 import com.iqtb.DAOs.ClientesDAO;
 import com.iqtb.DAOs.DocumentosRelacionadosPDAO;
 import com.iqtb.DAOs.XmlsDAO;
+import com.iqtb.POJOs.CfdisRelacionadosPadre;
 import com.iqtb.POJOs.Cfds;
 import com.iqtb.POJOs.DocumentosRelacionadosP;
 import com.iqtb.POJOs.UsuariosRecepcion;
@@ -341,6 +342,38 @@ public class ProcesarLineasPagos {
                 saldoFinal = "mal";
             }
             
+            //SPRINT 1: NOTAS DE CREDITO
+            BigDecimal montoRestar = BigDecimal.ZERO;
+            
+            List<CfdisRelacionadosPadre> listaCfdsPadre = new DocumentosRelacionadosPDAO().getCfdisEPadreRelacionados(cfd.getIdCfd());
+            
+            if(listaCfdsPadre.size()>0 && !listaCfdsPadre.isEmpty()){
+                
+                logger.info("Se encontraron al menos 1 documento E");
+                
+                for (CfdisRelacionadosPadre padre : listaCfdsPadre) {
+                    
+                    //Contar el numero de hijos
+                    Long numeroHijos = new DocumentosRelacionadosPDAO().contarHijosTipoI(padre.getCfds().getIdCfd());
+                    
+                    if (numeroHijos == 1) {
+                        
+                        BigDecimal totalCfdiE = cfdsDAO.obtenerTotalCfdiE(padre.getCfds().getIdCfd());
+                    
+                        montoRestar.add(totalCfdiE);
+                        
+                    }else{
+                        
+                        logger.error("No se puede calcular correctamente ");
+                        
+                        return null;
+                        
+                    }
+                    
+                }
+                
+            }
+            
             String impSaldoInsoluto= linea21[8];
             logger.info("El importe saldo impoluto es: " + impSaldoInsoluto);
             
@@ -352,6 +385,46 @@ public class ProcesarLineasPagos {
                     
                     logger.info("Coincide el saldo anterior con el importe pagado, todo correcto");
                     
+                    if(parcialidad.equals("1")){
+                        
+                        logger.info("Esta es la primer parcialidad, todo correcto");
+                        
+                    }//VERIFICANDO QUE SEA PRIMER PACIALIDAD
+                    else{
+                        
+                        if(impSaldoAnt.equals(saldoFinal)){
+                            
+                            logger.info("Si es igual al importe anterior, entonces no tiene NC o cosas raras de JDE");
+                            
+                        }else if (montoRestar.compareTo(BigDecimal.ZERO) > 0) {
+           
+                            logger.info("Tiene al menos una nota de credito, calculando el nuevo monto anterior");
+                            
+                            BigDecimal saldoFinale = new BigDecimal(saldoFinal).setScale(2, RoundingMode.HALF_UP);
+                            
+                            saldoFinale = saldoFinale.subtract(montoRestar).setScale(2, RoundingMode.HALF_UP);
+                            
+                            if(saldoFinale.toString().equals(impPagado)){
+                                
+                                logger.info("Se encontro que el saldo anterior era debido a una NC");
+                                
+                            }else{
+                                
+                                logger.error("No se sabe de donde sacaron ese monto, mandando a error");
+                                
+                                return null;
+                                
+                            }
+                            
+                        }else{
+                            
+                            logger.error("No es la primer parcialidad y no coincide con el saldo anterior");
+                            return null;
+                            
+                        }
+                        
+                    }//ES SEGUNDA O N PARCIALIDAD
+                    
                 }else{
                     
                     logger.error("No coinciden los montos, mandando a error");
@@ -359,7 +432,8 @@ public class ProcesarLineasPagos {
                     
                 }
                 
-            }else{
+            }//Fin el saldo insoluto es 0
+            else{
                 
                 logger.info("Verificando que el pago sea correcto");
                 
@@ -369,14 +443,45 @@ public class ProcesarLineasPagos {
                     
                     if(impSaldoAnt.equals(totalFactura.toString())){
                         
-                        logger.info("El saldo anmterior coincide cone l total de la factura");
+                        logger.info("El saldo anmterior coincide cone l total de la factura, verificando NC");
+                        if (montoRestar.compareTo(BigDecimal.ZERO) > 0){
+                            
+                            logger.error("El saldo anterior es igual al total de la factura pero no puede ser porque tiene nota de credito");
+                            return null;
+                            
+                        }
                         
                     }else{
                         
-                        logger.info("El saldo anterior no coincide, colocando el total de la factura");
+                        logger.info("El saldo anterior no coincide, verificando NC");
                         
-                        totalFactura = totalFactura.setScale(2, RoundingMode.HALF_UP);
-                        impSaldoAnt = totalFactura.toString();
+                        if (montoRestar.compareTo(BigDecimal.ZERO) > 0){
+                            
+                            logger.info("Restando el monto al monto anterior");
+                            
+                            totalFactura.subtract(montoRestar).setScale(2, RoundingMode.HALF_UP);
+                            logger.info("Nuevo total de Factura y saldo anterior: " + totalFactura);
+                            
+                            BigDecimal comprobarPago = totalFactura.subtract(new BigDecimal(impPagado).setScale(2, RoundingMode.HALF_UP));
+                            
+                            logger.info("El saldo anterior nuevo menos el importe pagado es: " + comprobarPago.toString());
+                            if(comprobarPago.compareTo(new BigDecimal(impSaldoInsoluto).setScale(2, RoundingMode.HALF_UP)) == 0){
+                                
+                                logger.info("El pago tiene coherencia con sus notas de credito");
+                                
+                            }else{
+                                
+                                logger.error("No tiene sentido el pago para primer parcialidad y NC");
+                                return null;
+                                
+                            }
+                            
+                        }else{
+                            
+                            totalFactura = totalFactura.setScale(2, RoundingMode.HALF_UP);
+                            impSaldoAnt = totalFactura.toString();
+                            
+                        }
                         
                     }
                     
@@ -388,8 +493,8 @@ public class ProcesarLineasPagos {
                     BigDecimal saldoInsoluto = new BigDecimal(impSaldoInsoluto).setScale(2, RoundingMode.HALF_UP);
                     
                     if (saldoInsoluto.compareTo(saldoAnterior) > 0) {
-                        
-                        logger.error("El saldo insoluto es mayor");
+
+                        logger.error("El saldo insoluto es mayor, no tiene mucho sentido");
                         
                         return null;
                         
@@ -406,15 +511,44 @@ public class ProcesarLineasPagos {
                             
                             logger.info("Se encontro el ultimo saldo anterior");
                             
-                            impSaldoAnt = saldoFinal;
+                            if (montoRestar.compareTo(BigDecimal.ZERO) > 0){
+                                
+                                logger.info("Se encontro notas de credito, modificando saldo anterior");
+                                
+                                BigDecimal saldoFinale = new BigDecimal(saldoFinal);
+                                
+                                saldoFinale = saldoFinale.subtract(montoRestar);
+                                
+                                logger.info("El nuevo saldo final es: " + saldoFinale.toString());
+                                
+                                if(saldoFinale.subtract(saldoInsoluto).compareTo(new BigDecimal(impPagado)) == 0){
+                                    
+                                    logger.info("Los montos en la linea son correctos");
+                                    impSaldoAnt= saldoFinale.toString();
+                                    
+                                }
+                                else{
+                                    
+                                    logger.error("No coinciden los montos");
+                                    
+                                }
+                                
+                                
+                            }//Fin si se encontro nota de credito
+                            else{
+                                
+                                logger.info("Asignando nuevo monto anterior porque no tiene nc");
+                                impSaldoAnt = saldoFinal;
+                                
+                            }//Fin no se encontraron NC
                             
-                        }
+                        }//Fin si se encontro un saldo anterior en DOCUMENTOS_RELACIONADOS_P
                         
-                    }
+                    }//Fin el saldo insoluto no es mayor que el saldo anterior
                     
-                }
+                }//FRin la parcialidad no es 1
                 
-            }
+            }//Fin el saldo insoluto no es 0
             
             logger.info("El importe saldo anterior: " + impSaldoAnt);
 
@@ -425,6 +559,23 @@ public class ProcesarLineasPagos {
             String impuesto = resultadoTasaXml.get(1);
             String tipoFactor = resultadoTasaXml.get(3);
             String tasaOCuota = resultadoTasaXml.get(2);
+            
+            String metodoPago = resultadoTasaXml.get(4);
+            
+            logger.info("El metodo de pago es: " + metodoPago);
+            if(metodoPago!=null){
+                
+                logger.info("El metodo de pago es: " + metodoPago);
+                
+                if(metodoPago.equals("PUE")){
+                    
+                    logger.error("NO SE PUEDE HACER UN PAGO DE UN DOCUMENTO RELACIONADO CON PAGO UNICA EXHIBICION");
+                    
+                    return null;
+                    
+                }
+                
+            }
         
             String objetoImpuesto="";
         
@@ -1250,6 +1401,7 @@ public class ProcesarLineasPagos {
 
     }
     
+
     
     
     public ArrayList<ArrayList<String>> verificarDobles21(ArrayList<ArrayList<String>> listaLineas21){

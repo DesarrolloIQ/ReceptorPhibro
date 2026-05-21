@@ -1,5 +1,6 @@
 package com.iqtb.DAOs;
 
+import com.iqtb.POJOs.CfdisRelacionadosPadre;
 import com.iqtb.POJOs.DocumentosRelacionadosP;
 import com.iqtb.Session.HibernateUtil;
 import java.util.ArrayList;
@@ -71,6 +72,87 @@ public List<DocumentosRelacionadosP> getPagosDeIngreso(Integer idCfdIngreso) {
             }
         }
         logger.error("Error en " + contexto + ": " + e.getMessage());
+    }
+    
+    
+    //nuevos  DAO para sprint 28
+    public List<CfdisRelacionadosPadre> getCfdisEPadreRelacionados(Integer idCfdiIngreso) {
+
+        List<CfdisRelacionadosPadre> resultado = new ArrayList<>();
+
+        try {
+
+            iniciarOperacion();
+
+            Query query = session.createQuery(
+                "select distinct padre " +
+                "from CfdisRelacionadosHijo hijo " +
+                "join hijo.cfdisRelacionadosPadre padre " +
+                "join fetch padre.cfds cfdPadre " +
+                "where hijo.cfds.idCfd = :idCfdiIngreso " +
+                "and hijo.estadoRelacion = 'VALIDO' " +
+                "and hijo.tipoCfdHijo = 'I' " +
+                "and padre.tipoCfdPadre = 'E'"
+            );
+
+            query.setParameter("idCfdiIngreso", idCfdiIngreso);
+
+            resultado = query.list();
+
+            tx.commit();
+
+        } catch (HibernateException e) {
+
+            tx.rollback();
+            logger.error("Error getCfdisEPadreRelacionados: " + e.getMessage());
+
+        } finally {
+
+            cerrarSesion();
+        }
+        
+        if(resultado.size()>0){
+            
+            logger.info("Se encontraron Cfdis de egreso con hijos I: " + resultado.size());
+            
+        }
+
+        return resultado;
+    }
+    
+    public Long contarHijosTipoI(Integer idCfdiRelacionadoPadre) {
+
+        Long total = 0L;
+
+        try {
+
+            iniciarOperacion();
+
+            Query query = session.createQuery(
+                "select count(hijo.idCfdRelacionadoHijo) " +
+                "from CfdisRelacionadosHijo hijo " +
+                "where hijo.cfdisRelacionadosPadre.idCfdRelacionadoPadre = :idPadre " +
+                "and hijo.tipoCfdHijo = 'I' " +
+                "and hijo.estadoRelacion = 'VALIDO'"
+            );
+
+            query.setParameter("idPadre", idCfdiRelacionadoPadre);
+
+            total = (Long) query.uniqueResult();
+
+            tx.commit();
+
+        } catch (HibernateException e) {
+
+            tx.rollback();
+            logger.error("Error contarHijosTipoI: " + e.getMessage());
+
+        } finally {
+
+            cerrarSesion();
+        }
+
+        return total;
     }
 
     private void cerrarSesion() {

@@ -86,6 +86,29 @@ public class ProcesarXml {
                     }//Fin if se encontro nodo
 
                 }//Fin del for por todos los nodos que contengan cfdi:Impuestos
+                
+                String metodoPago = null;
+                
+                try{
+                    
+                    metodoPago = doc.getElementsByTagName("cfdi:Comprobante").item(0).getAttributes().getNamedItem("MetodoPago").getTextContent();
+
+                }catch(Exception e){
+                    
+                    logger.error("Error al obtener metodo pago: " + e);
+                    
+                }
+                
+                if(metodoPago!=null){
+                    
+                    logger.info("Se encontro el metodoPago");
+                    listaTasas.add(4,metodoPago);
+                    
+                }else{
+                    
+                    listaTasas.add(4,null);
+                    
+                }
 
             }else{
                 logger.info("No se encontro nodo de impuestos");
