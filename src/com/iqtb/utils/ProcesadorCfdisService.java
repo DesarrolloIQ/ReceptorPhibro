@@ -83,8 +83,8 @@ public class ProcesadorCfdisService {
             if (lote == null || lote.isEmpty()) {
                 break;
             }
-            logger.debug("Lote de " + lote.size() + " CFDIs de pago por procesar.");
-            logger.debug("");
+            logger.info("Lote de " + lote.size() + " CFDIs de pago por procesar.");
+            logger.info("");
             for (Integer idCfdPago : lote) {
                 procesarUnCfdiDePago(idCfdPago);
             }
@@ -121,7 +121,7 @@ public class ProcesadorCfdisService {
         String folio = leerAtributo(doc, "/cfdi:Comprobante/@Folio", nsCfdi);
 
         if (version == null || version.isEmpty() || Double.parseDouble(version) < 4.0) {
-            logger.debug("CFDI " + serie + "-" + folio + " es versión " + version + ", no se trabaja con él.");
+            logger.info("CFDI " + serie + "-" + folio + " es versión " + version + ", no se trabaja con él.");
             return;
         }
 
@@ -133,7 +133,7 @@ public class ProcesadorCfdisService {
         }
 
         llenarTablaPagos(idCfdPago, cfdisPagos, doc, nsCfdi);
-        logger.debug("\n");
+        logger.info("\n");
     }
 
     /**
@@ -244,7 +244,7 @@ public class ProcesadorCfdisService {
                     cfdRelacionado.setIdCfd(idCfdIngreso);
                     drp.setCfds(cfdRelacionado);
                     drp.setEstadoRelacion("VALIDO");
-                    logger.debug("Documento relacionado uuid=" + uuidDocRelacionado
+                    logger.info("Documento relacionado uuid=" + uuidDocRelacionado
                             + " -> idCFD=" + idCfdIngreso + " (VALIDO)");
                     
                     String estadoActual = cfdsDAO.getFechaPedimento(idCfdIngreso);
@@ -255,9 +255,9 @@ public class ProcesadorCfdisService {
                             || "PENDIENTE_REVISION".equals(estadoActual); // ya está en cola, otro pago lo referencia también
                     if (!noRequiereActualizacion) {
                         cfdsDAO.actualizarFechaPedimento(idCfdIngreso, "PENDIENTE_REVISION");
-                        logger.debug("idCFD=" + idCfdIngreso + " marcado como PENDIENTE_REVISION");
+                        logger.info("idCFD=" + idCfdIngreso + " marcado como PENDIENTE_REVISION");
                     } else {
-                        logger.debug("idCFD=" + idCfdIngreso
+                        logger.info("idCFD=" + idCfdIngreso
                                 + " no se actualiza, estado actual: " + estadoActual);
                     }
                 } else {
@@ -292,8 +292,8 @@ public class ProcesadorCfdisService {
             if (lote == null || lote.isEmpty()) {
                 break;
             }
-            logger.debug("Lote de " + lote.size() + " CFDIs de egreso por procesar.");
-            logger.debug("");
+            logger.info("Lote de " + lote.size() + " CFDIs de egreso por procesar.");
+            logger.info("");
             for (Integer idCfdEgreso : lote) {
                 procesarUnCfdiDeEgreso(idCfdEgreso);
             }
@@ -329,13 +329,13 @@ public class ProcesadorCfdisService {
         String tipoCfd = leerAtributo(doc, "/cfdi:Comprobante/@TipoDeComprobante", nsCfdi);
 
         if (version == null || version.isEmpty() || tipoCfd == null || tipoCfd.isEmpty() || !tipoCfd.equals("E") || Double.parseDouble(version) < 4.0) {
-            logger.debug("CFDI idCFD=" + idCfdEgreso + " es versión " + version + " y tipoCfd " + tipoCfd + ", no se trabaja con él.");
+            logger.info("CFDI idCFD=" + idCfdEgreso + " es versión " + version + " y tipoCfd " + tipoCfd + ", no se trabaja con él.");
             return;
         }
 
         // Llenar padre y luego hijos
         llenarTablaCfdisRelacionadosPadre(idCfdEgreso, doc, nsCfdi);
-        logger.debug("\n");
+        logger.info("\n");
     }
 
     /**
@@ -409,7 +409,7 @@ public class ProcesadorCfdisService {
                     String tipoCfdHijo = cfdsDAO.getTipoCfd(idCfdRelacionado);
                     hijo.setTipoCfdHijo(tipoCfdHijo);
                     hijo.setEstadoRelacion("VALIDO");
-                    logger.debug("CfdiRelacionado uuid=" + uuidRelacionado
+                    logger.info("CfdiRelacionado uuid=" + uuidRelacionado
                             + " -> idCFD=" + idCfdRelacionado + " (VALIDO)");
                 } else {
                     hijo.setEstadoRelacion("ERROR");
@@ -436,8 +436,8 @@ public class ProcesadorCfdisService {
             if (lote == null || lote.isEmpty()) {
                 break;
             }
-            logger.debug("Lote de " + lote.size() + " CFDIs de egreso por procesar.");
-            logger.debug("");
+            logger.info("Lote de " + lote.size() + " CFDIs de ingreso por procesar.");
+            logger.info("");
             for (Integer idCfdEgreso : lote) {
                 validarEstadoPago(idCfdEgreso);
             }
@@ -452,7 +452,7 @@ public class ProcesadorCfdisService {
         String xmlSat = xmlsDAO.getXmlSat(idCfdIngreso);
         if (xmlSat == null || xmlSat.isEmpty()) {
             logger.error("No se encontró XML_SAT para idCFD=" + idCfdIngreso);
-            logger.debug("\n");
+            logger.info("\n");
             return;
         }
 
@@ -464,10 +464,10 @@ public class ProcesadorCfdisService {
 
         if (version == null || Double.parseDouble(version) < 4.0
                 || tipoCfdi == null || !tipoCfdi.equals("I")) {
-            logger.debug("idCFD=" + idCfdIngreso + " version=" + version
+            logger.info("idCFD=" + idCfdIngreso + " version=" + version
                     + " tipo=" + tipoCfdi + " -> NO_APLICA");
             cfdsDAO.actualizarFechaPedimento(idCfdIngreso, "NO_APLICA");
-            logger.debug("\n");
+            logger.info("\n");
             return;
         }
 
@@ -482,7 +482,7 @@ public class ProcesadorCfdisService {
             if ("VIGENTE".equals(estadoFiscal)) {
                 docsFiltrados.add(drp);
             } else {
-                logger.debug("Pago idPago=" + drp.getPagos().getIdPago()
+                logger.info("Pago idPago=" + drp.getPagos().getIdPago()
                         + " ignorado, estadoFiscal=" + estadoFiscal);
             }
         }
@@ -492,7 +492,7 @@ public class ProcesadorCfdisService {
         if (tienePagosPadre) {
             for (DocumentosRelacionadosP drp : docsFiltrados) {
                 Cfds cfdsPago = drp.getPagos().getCfdisPagos().getCfds();
-                logger.debug("Parcialidad #" + drp.getNumParcialidad()
+                logger.info("Parcialidad #" + drp.getNumParcialidad()
                         + " | CFDI Pago: " + cfdsPago.getSerie() + "-" + cfdsPago.getFolio()
                         + " | Fecha: " + drp.getPagos().getFechaPago()
                         + " | FormaPago: " + drp.getPagos().getFormaPago()
@@ -510,7 +510,7 @@ public class ProcesadorCfdisService {
                     .filter(s -> s != null)
                     .min(BigDecimal::compareTo) // el más bajo
                     .orElse(null);
-            logger.debug("Saldo insoluto más bajo: " + saldoMasBajo);
+            logger.info("Saldo insoluto mas bajo: " + saldoMasBajo);
         }
 
         // Aplicar los 4 casos
@@ -534,9 +534,9 @@ public class ProcesadorCfdisService {
             logger.warn("idCFD=" + idCfdIngreso + " MetodoPago desconocido: " + metodoPago);
         }
 
-        logger.debug("idCFD=" + idCfdIngreso + " -> " + nuevaFechaPedimento);
+        logger.info("idCFD=" + idCfdIngreso + " -> " + nuevaFechaPedimento);
         cfdsDAO.actualizarFechaPedimento(idCfdIngreso, nuevaFechaPedimento);
-        logger.debug("\n");
+        logger.info("\n");
     }
 
     public static String obtenerEstatusGeneral(String estadoFiscal) {

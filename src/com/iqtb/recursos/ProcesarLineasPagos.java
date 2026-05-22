@@ -220,6 +220,7 @@ public class ProcesarLineasPagos {
     public ArrayList<String> procesarLinea21(String lineaTxt, Integer idUsuario, String monedaPago, String tipoCambio){
 
         ArrayList<String> listaLinea21 = new ArrayList<>();
+        String mensajeError="";
 
         String[] linea21 = lineaTxt.split("\\|");
 
@@ -366,11 +367,18 @@ public class ProcesarLineasPagos {
                         
                         logger.error("No se puede calcular correctamente ");
                         
-                        return null;
+                        mensajeError="ERROR 21|Se encontraron mas de 1 documento de Ingreso ligado al documento de Egreso " + padre.getCfds().getUuid() + "para el documento con folio: " +folio + ", serie: " + serie;
+                        
+                        listaLinea21.add(0, mensajeError);
+                        return listaLinea21;
                         
                     }
                     
                 }
+                
+            }else{
+                
+                logger.info("No se encontraron documentos E o notas de credito");
                 
             }
             
@@ -383,7 +391,7 @@ public class ProcesarLineasPagos {
                 
                 if(impSaldoAnt.equals(impPagado)){
                     
-                    logger.info("Coincide el saldo anterior con el importe pagado, todo correcto");
+                    logger.info("Coincide el saldo anterior con el importe pagado, VERIFICANDO SALDO ANTERIOR con db");
                     
                     if(parcialidad.equals("1")){
                         
@@ -412,14 +420,21 @@ public class ProcesarLineasPagos {
                                 
                                 logger.error("No se sabe de donde sacaron ese monto, mandando a error");
                                 
-                                return null;
+                                mensajeError = "ERROR 21|El saldo anterior: " + saldoFinal + " es diferente del importe pagado: " + impPagado + " porque se encontraron Notas de Credito para el documento con folio: " +folio + ", serie: " + serie;
+                                
+                                listaLinea21.add(0, mensajeError);
+                                return listaLinea21;
                                 
                             }
                             
                         }else{
                             
-                            logger.error("No es la primer parcialidad y no coincide con el saldo anterior");
-                            return null;
+                            logger.error("No es la primer parcialidad y no coincide con el saldo anterior registrado: " + saldoFinal + " para el documento con folio: " +folio + ", serie: " + serie);
+                            
+                            mensajeError="ERROR 21|No es la primer parcialidad y no coincide con el saldo anterior registrado: " + saldoFinal + " para el documento con folio: " +folio + ", serie: " + serie;
+                            
+                            listaLinea21.add(0, mensajeError);
+                            return listaLinea21;
                             
                         }
                         
@@ -427,8 +442,12 @@ public class ProcesarLineasPagos {
                     
                 }else{
                     
-                    logger.error("No coinciden los montos, mandando a error");
-                    return null;
+                    logger.error("Para un pago que se va a liquidar el saldo anterior: " + impSaldoAnt + " e importe pagado: " + impPagado + " para el documento con folio: " +folio + ", serie: " + serie);
+                    
+                    mensajeError = "ERROR 21|Para un pago que se va a liquidar el saldo anterior: " + impSaldoAnt + " e importe pagado: " + impPagado + " para el documento con folio: " +folio + ", serie: " + serie;
+                    
+                    listaLinea21.add(0, mensajeError);
+                    return listaLinea21;
                     
                 }
                 
@@ -446,10 +465,15 @@ public class ProcesarLineasPagos {
                         logger.info("El saldo anmterior coincide cone l total de la factura, verificando NC");
                         if (montoRestar.compareTo(BigDecimal.ZERO) > 0){
                             
-                            logger.error("El saldo anterior es igual al total de la factura pero no puede ser porque tiene nota de credito");
-                            return null;
+                            logger.error("El saldo anterior:" + impSaldoAnt + " es igual al total de la factura" + totalFactura.toString() + " pero no puede ser porque tiene nota de credito, saldo anterior a restar: " + montoRestar.toString() + " para el documento con folio: " +folio + ", serie: " + serie);
+                            
+                            mensajeError = "ERROR 21|El saldo anterior:" + impSaldoAnt + " es igual al total de la factura" + totalFactura.toString() + " pero no puede ser porque tiene nota de credito, saldo anterior a restar: " + montoRestar.toString() + " para el documento con folio: " +folio + ", serie: " + serie;
+                            
+                            listaLinea21.add(0, mensajeError);
+                            return listaLinea21;
                             
                         }
+                        logger.info("No se encontraron NC");
                         
                     }else{
                         
@@ -458,6 +482,8 @@ public class ProcesarLineasPagos {
                         if (montoRestar.compareTo(BigDecimal.ZERO) > 0){
                             
                             logger.info("Restando el monto al monto anterior");
+                            
+                            String totalParcial = totalFactura.toString();
                             
                             totalFactura.subtract(montoRestar).setScale(2, RoundingMode.HALF_UP);
                             logger.info("Nuevo total de Factura y saldo anterior: " + totalFactura);
@@ -471,8 +497,12 @@ public class ProcesarLineasPagos {
                                 
                             }else{
                                 
-                                logger.error("No tiene sentido el pago para primer parcialidad y NC");
-                                return null;
+                                logger.error("No tiene sentido el pago para primer parcialidad y NC, total factura : " + totalParcial + " nota de credito: " + montoRestar.toString() + " dando como resultado: " + totalFactura.toString() + " pero al restarlo al importe pagado no coinmcide con el saldo insoluto" + " para el documento con folio: " +folio + ", serie: " + serie);
+                                
+                                mensajeError = "ERROR 21|No tiene sentido el pago para primer parcialidad y NC, total factura : " + totalParcial + " nota de credito: " + montoRestar.toString() + " dando como resultado: " + totalFactura.toString() + " pero al restarlo al importe pagado no coinmcide con el saldo insoluto" + " para el documento con folio: " +folio + ", serie: " + serie;
+                                
+                                listaLinea21.add(0, mensajeError);
+                                return listaLinea21;
                                 
                             }
                             
@@ -494,9 +524,11 @@ public class ProcesarLineasPagos {
                     
                     if (saldoInsoluto.compareTo(saldoAnterior) > 0) {
 
-                        logger.error("El saldo insoluto es mayor, no tiene mucho sentido");
+                        logger.error("El saldo insoluto: " + saldoInsoluto.toString() + " es mayor que el saldo anterior: " + saldoAnterior.toString() + ", no tiene mucho sentido" + " pero al restarlo al importe pagado no coinmcide con el saldo insoluto" + " para el documento con folio: " +folio + ", serie: " + serie);
                         
-                        return null;
+                        mensajeError = "ERROR 21|El saldo insoluto: " + saldoInsoluto.toString() + " es mayor que el saldo anterior: " + saldoAnterior.toString() + ", no tiene mucho sentido" + " pero al restarlo al importe pagado no coinmcide con el saldo insoluto" + " para el documento con folio: " + folio + ", serie: " + serie;
+                        listaLinea21.add(0, mensajeError);
+                        return listaLinea21;
                         
                     }else{
                         
@@ -569,9 +601,12 @@ public class ProcesarLineasPagos {
                 
                 if(metodoPago.equals("PUE")){
                     
-                    logger.error("NO SE PUEDE HACER UN PAGO DE UN DOCUMENTO RELACIONADO CON PAGO UNICA EXHIBICION");
+                    logger.error("NO SE PUEDE HACER UN PAGO DE UN DOCUMENTO RELACIONADO CON PAGO UNICA EXHIBICION, METODO DE PAGO PUE" + " para el documento con folio: " + folio + ", serie: " + serie);
                     
-                    return null;
+                    mensajeError = "NO SE PUEDE HACER UN PAGO DE UN DOCUMENTO RELACIONADO CON PAGO UNICA EXHIBICION, METODO DE PAGO PUE" + " para el documento con folio: " + folio + ", serie: " + serie;
+                    
+                    listaLinea21.add(0, mensajeError);
+                    return listaLinea21;
                     
                 }
                 
@@ -695,7 +730,7 @@ public class ProcesarLineasPagos {
                 }else{
                     
                     logger.error("Ya existe un documento timbrado con estos datos");
-                    return null;
+                    return contenidoTxt + "\n" + "ERROR|Este documento ya ha sido timbrado";
                     
                 }
                 
@@ -792,15 +827,15 @@ public class ProcesarLineasPagos {
 
                 ArrayList<String> resultadoLinea21 = procesarLinea21(lineaTxt, idSucursal, monedaPago, tipoCambioString);
 
-                if(resultadoLinea21!=null){
+                if(resultadoLinea21!=null && !resultadoLinea21.get(0).startsWith("ERROR")){
 
                     listaDeLineas21.add(resultadoLinea21);
 
                 }else{
 
-                    logger.error("LINEA21: Uno o mas documentos relacionados no eran de ingreso");
-                    
-                    return null;
+                    //logger.error(resultadoLinea21.get(0));
+
+                    return contenidoTxt + "\n" + resultadoLinea21.get(0);
                 }
 
 
@@ -1393,7 +1428,7 @@ public class ProcesarLineasPagos {
         }else{
             
             logger.error("No se encontraron lineas 21");
-            return null;
+            return contenidoTxt + "\n" + "ERROR|No se encontraron lineas con identificador 21 en el archivo";
             
         }
         
