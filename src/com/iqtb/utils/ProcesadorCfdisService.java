@@ -247,6 +247,21 @@ public class ProcesadorCfdisService {
                     logger.info("Documento relacionado uuid=" + uuidDocRelacionado
                             + " -> idCFD=" + idCfdIngreso + " (VALIDO)");
                     
+                    // Detectar pago duplicado: buscar si otro CFDI-P vigente ya dejó el
+                    // saldo insoluto de este comprobante en cero antes que el actual.
+                    // La consulta se hace ANTES de insertar el drp actual para no necesitar
+                    // excluirlo en la búsqueda.
+                    List<Object[]> pagosOriginales = docRelPDAO.getPagosCompletosVigentes(uuidDocRelacionado, idCfdPago);
+                    if (!pagosOriginales.isEmpty()) {
+                        cfdsDAO.actualizarFechaPedimento(idCfdPago, "PAGO_DUPLICADO");
+                        logger.warn("PAGO_DUPLICADO detectado: idCFD=" + idCfdPago
+                                + " intenta cubrir el comprobante uuid=" + uuidDocRelacionado
+                                + " que ya fue cubierto por:");
+                        for (Object[] original : pagosOriginales) {
+                            logger.warn("  -> CFDI-P original: serie=" + original[0]+ " folio=" + original[1]+ " uuid=" + original[2]+ " fecha=" + original[3]);
+                        }
+                    }
+                    
                     String estadoActual = cfdsDAO.getFechaPedimento(idCfdIngreso);
                     boolean noRequiereActualizacion = "PAGADO_PPD".equals(estadoActual)
                             || "PAGADO_PUE".equals(estadoActual)
@@ -426,6 +441,13 @@ public class ProcesadorCfdisService {
         }
     }
 
+    // =========================================================================
+    // SPRINT 7 – CFDIs de INGRESO
+    // =========================================================================
+    /**
+     * Obtiene los CFDIs de tipo I  con FECHA_PEDIMENTO=PENDIENTE_REVISION en lotes de
+     * BATCH_SIZE.
+     */
     public void procesarCfdisDeIngreso() {
         logger.debug("\n");
         logger.debug("=== INICIO Sprint 7: procesarCfdisDeIngreso ===");

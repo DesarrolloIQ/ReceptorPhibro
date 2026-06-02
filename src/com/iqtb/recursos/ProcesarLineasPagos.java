@@ -601,7 +601,7 @@ public class ProcesarLineasPagos {
                 
                 if(metodoPago.equals("PUE")){
                     
-                    logger.error("NO SE PUEDE HACER UN PAGO DE UN DOCUMENTO RELACIONADO CON PAGO UNICA EXHIBICION, METODO DE PAGO PUE" + " para el documento con folio: " + folio + ", serie: " + serie);
+                    logger.error("ERROR 21| NO SE PUEDE HACER UN PAGO DE UN DOCUMENTO RELACIONADO CON PAGO UNICA EXHIBICION, METODO DE PAGO PUE" + " para el documento con folio: " + folio + ", serie: " + serie);
                     
                     mensajeError = "NO SE PUEDE HACER UN PAGO DE UN DOCUMENTO RELACIONADO CON PAGO UNICA EXHIBICION, METODO DE PAGO PUE" + " para el documento con folio: " + folio + ", serie: " + serie;
                     
@@ -836,6 +836,7 @@ public class ProcesarLineasPagos {
                     //logger.error(resultadoLinea21.get(0));
 
                     return contenidoTxt + "\n" + resultadoLinea21.get(0);
+                    
                 }
 
 

@@ -154,6 +154,43 @@ public List<DocumentosRelacionadosP> getPagosDeIngreso(Integer idCfdIngreso) {
 
         return total;
     }
+    
+    /**
+     * Retorna los datos del CFDI-P original (serie, folio, uuid, fecha) que ya
+     * dejó en cero el saldo insoluto del comprobante indicado, excluyendo el
+     * CFDI-P que se está procesando ahora.
+     * Cada elemento del resultado es Object[]{serie, folio, uuid, fecha}.
+     * Lista vacía significa que no hay duplicado.
+     */
+    public List<Object[]> getPagosCompletosVigentes(String uuidDocRelacionado, Integer idCfdPagoExcluir) {
+        List<Object[]> resultado = new ArrayList<>();
+        try {
+            iniciarOperacion();
+            Query query = session.createQuery(
+                "select c.serie, c.folio, c.uuid, c.fecha " +
+                "from DocumentosRelacionadosP drp " +
+                "join drp.pagos p " +
+                "join p.cfdisPagos cp " +
+                "join cp.cfds c " +
+                "where drp.idDocumento = :uuid " +
+                "and drp.estadoRelacion = 'VALIDO' " +
+                "and drp.importeSaldoInsoluto = 0 " +
+                "and c.idCfd != :idCfdPagoExcluir " +
+                "and c.estado != 'CANCELADO'"
+            );
+            query.setParameter("uuid", uuidDocRelacionado);
+            query.setParameter("idCfdPagoExcluir", idCfdPagoExcluir);
+            resultado = query.list();
+            tx.commit();
+        } catch (HibernateException e) {
+            tx.rollback();
+            logger.error("Error en getPagosCompletosVigentes uuid=" + uuidDocRelacionado
+                    + ": " + e.getMessage());
+        } finally {
+            cerrarSesion();
+        }
+        return resultado;
+    }
 
     private void cerrarSesion() {
         if (session != null && session.isOpen()) {
