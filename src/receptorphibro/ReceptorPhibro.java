@@ -16,7 +16,7 @@ import com.iqtb.POJOs.Servicios;
 import com.iqtb.POJOs.UsuariosRecepcion;
 import com.iqtb.recursos.DetectarCodif;
 import com.iqtb.recursos.ProcesarLineasPagos;
-import com.iqtb.utils.ProcesadorCfdisService;
+import com.iqtb.utils.RelacionPagos;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -57,7 +57,6 @@ public class ReceptorPhibro {
         //PropertyConfigurator.configure("configReceptorPhilbro/log4j.properties");
         
         //En cada corrida se verifica que los Cfds de PAGO o EGRESO ya esten revisados en BD
-        ProcesadorCfdisService procesadorCfdisService = new ProcesadorCfdisService();
         
         
         
@@ -83,9 +82,8 @@ public class ReceptorPhibro {
         int ciclos = 0;
         while (true) {
             //SE LLAMAN LOS METODOS DEL GAS PARA CALCULAR LOS PAGOS DE TODOS LOS CFDS EN LA DB ALV
-            procesadorCfdisService.procesarCfdisDePago();
-            procesadorCfdisService.procesarCfdisDeEgreso();
-            procesadorCfdisService.procesarCfdisDeIngreso();
+            // Sprints 2 (pagos), 4 (egresos) y 7 (ingresos): ahora en la libreria RelacionadorFacturasPagos
+            RelacionPagos.procesador().ejecutarCiclo();
             
             
             mostrarLog = receptorPhibro.procesar(mostrarLog);

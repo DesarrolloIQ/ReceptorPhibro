@@ -60,31 +60,6 @@ public class XmlsDAO {
         return xml;
     }
     
-    public String getXmlSat(Integer idCfd) {
-        List<String> lista = null;
-        try {
-            iniciarOperacion();
-            Query query = session.createQuery(
-                    "select xmlSat from Xmls where cfds.idCfd = :idCfd");
-            query.setParameter("idCfd", idCfd);
-            lista = query.list();
-            tx.commit();
-        } catch (HibernateException e) {
-            if (tx != null) {
-                try { tx.rollback(); } catch (HibernateException ex) {
-                    logger.error("Error en rollback getXmlSat: " + ex.getMessage());
-                }
-            }
-            logger.error("Error en getXmlSat idCfd=" + idCfd + ": " + e.getMessage());
-        } finally {
-            if (session != null && session.isOpen()) session.close();
-        }
-
-        if (lista != null && !lista.isEmpty()) {
-            return lista.get(0);
-        }
-        return null;
-    }
     
     
     private void iniciarOperacion() throws HibernateException {

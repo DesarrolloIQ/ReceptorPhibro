@@ -233,179 +233,20 @@ public class CfdsDAO {
     
     
 
-    public List<Integer> getIdCfdsPendientesPorTipo(String tipoCfd, int limite) {
-        List<Integer> resultado = Collections.emptyList();
-        try {
-            iniciarOperacion();
-            Query query = session.createQuery(
-                    "select idCfd from Cfds " +
-                    "where tipoCfd = :tipoCfd " +
-                    "and fechaPedimento is null");
-            query.setParameter("tipoCfd", tipoCfd);
-            query.setMaxResults(limite);
-            resultado = query.list();
-            tx.commit();
-        } catch (HibernateException e) {
-            tx.rollback();
-            logger.error("Error en getIdCfdsPendientesPorTipo tipoCfd=" + tipoCfd
-                    + ": " + e.getMessage());
-        } finally {
-            if (session.isOpen()) session.close();
-        }
-        return resultado;
-    }
     
-     public List<Integer> getIdCfdsPendientesPorTipoAndFechaPedimento(
-        String tipoCfd, int limite, Integer ultimoIdCfd) {
-    List<Integer> resultado = Collections.emptyList();
-    try {
-        iniciarOperacion();
-        String hql = "select idCfd from Cfds " +
-                     "where tipoCfd = :tipoCfd " +
-                     "and (fechaPedimento is null   or fechaPedimento = 'PENDIENTE_REVISION') " +
-                     (ultimoIdCfd != null ? "and idCfd > :ultimoIdCfd " : "") + "order by idCfd asc";
-        Query query = session.createQuery(hql);
-        query.setParameter("tipoCfd", tipoCfd);
-        if (ultimoIdCfd != null) {
-            query.setParameter("ultimoIdCfd", ultimoIdCfd);
-        }
-        query.setMaxResults(limite);
-        resultado = query.list();
-        tx.commit();
-    } catch (HibernateException e) {
-        tx.rollback();
-        logger.error("Error en getIdCfdsPendientesPorTipoAndFechaPedimento: " + e.getMessage());
-    } finally {
-        if (session.isOpen()) session.close();
-    }
-    return resultado;
-}
 
 
 
 
-    public Integer getIdCfdByUuid(String uuid) {
-        if (uuid == null || uuid.isEmpty()) return null;
-        List<Integer> lista = null;
-        try {
-            iniciarOperacion();
-            Query query = session.createQuery(
-                    "select idCfd from Cfds where uuid = :uuid");
-            query.setParameter("uuid", uuid);
-            lista = query.list();
-            tx.commit();
-        } catch (HibernateException e) {
-            tx.rollback();
-            logger.error("Error en getIdCfdByUuid uuid=" + uuid + ": " + e.getMessage());
-        } finally {
-            if (session.isOpen()) session.close();
-        }
-        if (lista != null && !lista.isEmpty()) {
-            if (lista.size() > 1) {
-                logger.warn("Existe más de un CFDI con UUID=" + uuid + ". Se toma el primero.");
-            }
-            return lista.get(0);
-        }
-        return null;
-    }
 
 
-
-    public String getTipoCfd(Integer idCfd) {
-        if (idCfd == null) return null;
-        List<String> lista = null;
-        try {
-            iniciarOperacion();
-            Query query = session.createQuery(
-                    "select tipoCfd from Cfds where idCfd = :idCfd");
-            query.setParameter("idCfd", idCfd);
-            lista = query.list();
-            tx.commit();
-        } catch (HibernateException e) {
-            tx.rollback();
-            logger.error("Error en getTipoCfd idCfd=" + idCfd + ": " + e.getMessage());
-        } finally {
-            if (session.isOpen()) session.close();
-        }
-        return (lista != null && !lista.isEmpty()) ? lista.get(0) : null;
-    }
-    
-    public String getFechaPedimento(Integer idCfd) {
-       String resultado = null;
-        try {
-            iniciarOperacion();
-            String hql = "select fechaPedimento from Cfds where idCfd = :idCfd";
-            Query query = session.createQuery(hql);
-            query.setParameter("idCfd", idCfd);
-            resultado = (String) query.uniqueResult();
-            tx.commit();
-        } catch (HibernateException e) {
-            tx.rollback();
-            logger.error("Error en getFechaPedimento idCFD=" + idCfd + ": " + e.getMessage());
-        } finally {
-            if (session.isOpen()) session.close();
-        }
-        return resultado;
-    }
-
-
-
-    public void actualizarFechaPedimento(Integer idCfd, String valor) {
-        try {
-            iniciarOperacion();
-            Query query = session.createQuery(
-                    "update Cfds set fechaPedimento = :valor where idCfd = :idCfd");
-            query.setParameter("valor", valor);
-            query.setParameter("idCfd", idCfd);
-            query.executeUpdate();
-            tx.commit();
-            logger.debug("FECHA_PEDIMENTO actualizada a '" + valor + "' para idCFD=" + idCfd);
-        } catch (HibernateException e) {
-            tx.rollback();
-            logger.error("Error en actualizarFechaPedimento idCfd=" + idCfd
-                    + ": " + e.getMessage());
-        } finally {
-            if (session.isOpen()) session.close();
-        }
-    }
 
     
-    public BigDecimal obtenerTotalCfdiE(Integer idCfdiPadre) {
 
-        BigDecimal total = BigDecimal.ZERO;
 
-        try {
 
-            iniciarOperacion();
 
-            Query query = session.createQuery(
-                "select c.total " +
-                "from Cfds c " +
-                "where c.idCfd = :idCfdi"
-            );
-
-            query.setParameter("idCfdi", idCfdiPadre);
-
-            BigDecimal resultado = (BigDecimal) query.uniqueResult();
-
-            if (resultado != null) {
-                total = resultado;
-            }
-
-            tx.commit();
-
-        } catch (HibernateException e) {
-
-            tx.rollback();
-            logger.error("Error obtenerTotalCfdiE: " + e.getMessage());
-
-        } finally {
-
-            if (session.isOpen()) session.close();
-        }
-
-        return total;
-    }
+    
     
 
 

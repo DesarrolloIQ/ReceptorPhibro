@@ -1,5 +1,17 @@
 # ReceptorPhibro — Guía de referencia rápida
 
+> **Cambio de arquitectura:** la lógica de los Sprints 2, 4 y 7 (relación pago↔factura) ya **no vive en este proyecto**.
+> Está en la librería **RelacionadorFacturasPagos** (`/GitHub/RelacionadorFacturasPagos`, JDBC puro, con tests y su propio `Main`).
+> Este proyecto solo la llama: `RelacionPagos.procesador().ejecutarCiclo()` en el bucle de `ReceptorPhibro.main`, y
+> `RelacionPagos.relacionador()` desde `ProcesarLineasPagos` para consultar pagos/egresos de una factura.
+> El DDL de las tablas de pagos (`Script_Crear_Tablas_Pagos.sql`) también se movió a la librería (`sql/`).
+> Las secciones de flujo de abajo describen lo que hace esa librería; se conservan como referencia.
+> Se eliminaron: `ProcesadorCfdisService`, `PagosDAO`, `DocumentosRelacionadosPDAO`, `CfdisRelacionadosDAO` y los POJO/mapeos
+> de `CfdisPagos`, `Pagos`, `DocumentosRelacionadosP`, `Retenciones*`, `Traslados*`, `CfdisRelacionadosPadre/Hijo`.
+> Cambios de comportamiento respecto al código anterior: cada CFDI se procesa en una transacción; los fallos quedan en
+> `FECHA_PEDIMENTO='ERROR_PROCESO'` (antes `NO_APLICA`); se ignora el BOM de UTF-8 de los XML.
+
+
 ## Propósito del sistema
 
 Procesador automático de **CFDIs recibidos** (Comprobantes Fiscales Digitales por Internet) conforme al estándar SAT mexicano. Corre en bucle infinito cada 5 segundos y ejecuta tres sprints en secuencia:
@@ -20,7 +32,7 @@ src/
 │   └── ReceptorPhibro.java          ← punto de entrada, bucle principal
 ├── com/iqtb/
 │   ├── utils/
-│   │   └── ProcesadorCfdisService.java  ← orquestador de los 3 sprints
+│   │   └── RelacionPagos.java           ← acceso a la librería RelacionadorFacturasPagos (reemplaza a ProcesadorCfdisService)
 │   ├── recursos/
 │   │   ├── ProcesarLineasPagos.java     ← parser de archivos .iqtb/.txt
 │   │   ├── ProcesarXml.java             ← extracción de impuestos desde XML
@@ -100,11 +112,8 @@ procesarCfdisDePago()
 
 | DAO | Métodos clave |
 |-----|--------------|
-| `CfdsDAO` | `getIdCfdByUuid`, `actualizarFechaPedimento`, `getFechaPedimento`, `getIdCfdsPendientesPorTipo` |
-| `PagosDAO` | `guardarCfdisPagos`, `guardarPago` |
-| `DocumentosRelacionadosPDAO` | `guardar`, `getPagosDeIngreso`, `existePagoCompletoVigente` |
-| `CfdisRelacionadosDAO` | `guardarPadre`, `guardarHijo` |
-| `XmlsDAO` | `getXmlSat` |
+| `CfdsDAO` | `obtenerUuid`, `comprobarExistente` (la parte de pagos pasó a la librería) |
+| `XmlsDAO` | `verificarXmls` |
 
 ---
 
@@ -114,7 +123,7 @@ procesarCfdisDePago()
 - **Hibernate**: `src/hibernate.cfg.xml`
 - **Logs**: Log4j → `configReceptorPhilbro/log4j.properties`
 - **Build**: Ant (`build.xml`), proyecto NetBeans
-- **BATCH_SIZE**: 200 registros por lote en `ProcesadorCfdisService`
+- **BATCH_SIZE**: 200 registros por lote en `ProcesadorCfdis` (librería)
 
 ---
 

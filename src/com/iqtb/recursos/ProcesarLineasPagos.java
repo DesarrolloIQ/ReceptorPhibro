@@ -6,11 +6,12 @@ package com.iqtb.recursos;
 
 import com.iqtb.DAOs.CfdsDAO;
 import com.iqtb.DAOs.ClientesDAO;
-import com.iqtb.DAOs.DocumentosRelacionadosPDAO;
 import com.iqtb.DAOs.XmlsDAO;
-import com.iqtb.POJOs.CfdisRelacionadosPadre;
+import com.iqtb.relacionador.EgresoRelacionado;
+import com.iqtb.relacionador.PagoDeFactura;
+import com.iqtb.relacionador.RelacionadorFacturasPagos;
+import com.iqtb.utils.RelacionPagos;
 import com.iqtb.POJOs.Cfds;
-import com.iqtb.POJOs.DocumentosRelacionadosP;
 import com.iqtb.POJOs.UsuariosRecepcion;
 import com.iqtb.POJOs.Xmls;
 import java.io.BufferedReader;
@@ -315,12 +316,12 @@ public class ProcesarLineasPagos {
             
             String montoCalcular=impPagado;
         
-            List<DocumentosRelacionadosP> documentosRelacionadosPs = new DocumentosRelacionadosPDAO().getPagosDeIngreso(cfd.getIdCfd());
+            RelacionadorFacturasPagos relacionador = RelacionPagos.relacionador();
+            List<PagoDeFactura> documentosRelacionadosPs = relacionador.pagosDeIngreso(cfd.getIdCfd());
             if (documentosRelacionadosPs != null && !documentosRelacionadosPs.isEmpty()) {
                 //Obteniendo la parcialidad maxima
                 Integer maxParcialidad = documentosRelacionadosPs.stream()
-                        .map(DocumentosRelacionadosP::getNumParcialidad)
-                        .filter(p -> p != null)
+                        .map(PagoDeFactura::getNumParcialidad)
                         .max(Integer::compareTo)
                         .orElse(0);
                 
@@ -329,7 +330,7 @@ public class ProcesarLineasPagos {
                 
                 //Obteniendo la parcialidad minima
                 String menorSaldoInsoluto = documentosRelacionadosPs.stream()
-                    .map(DocumentosRelacionadosP::getImporteSaldoInsoluto)
+                    .map(PagoDeFactura::getImporteSaldoInsoluto)
                     .filter(s -> s != null)
                     .min(BigDecimal::compareTo)
                     .map(BigDecimal::toPlainString)
@@ -346,20 +347,20 @@ public class ProcesarLineasPagos {
             //SPRINT 1: NOTAS DE CREDITO
             BigDecimal montoRestar = BigDecimal.ZERO;
             
-            List<CfdisRelacionadosPadre> listaCfdsPadre = new DocumentosRelacionadosPDAO().getCfdisEPadreRelacionados(cfd.getIdCfd());
+            List<EgresoRelacionado> listaCfdsPadre = relacionador.egresosRelacionados(cfd.getIdCfd());
             
             if(listaCfdsPadre.size()>0 && !listaCfdsPadre.isEmpty()){
                 
                 logger.info("Se encontraron al menos 1 documento E");
                 
-                for (CfdisRelacionadosPadre padre : listaCfdsPadre) {
+                for (EgresoRelacionado padre : listaCfdsPadre) {
                     
-                    //Contar el numero de hijos
-                    Long numeroHijos = new DocumentosRelacionadosPDAO().contarHijosTipoI(padre.getCfds().getIdCfd());
+                    //Contar el numero de hijos (se conserva el argumento original: el idCFD del egreso)
+                    long numeroHijos = relacionador.contarHijosTipoI(padre.getIdCfdEgreso());
                     
                     if (numeroHijos == 1) {
                         
-                        BigDecimal totalCfdiE = cfdsDAO.obtenerTotalCfdiE(padre.getCfds().getIdCfd());
+                        BigDecimal totalCfdiE = relacionador.totalCfd(padre.getIdCfdEgreso());
                     
                         montoRestar.add(totalCfdiE);
                         
@@ -367,7 +368,7 @@ public class ProcesarLineasPagos {
                         
                         logger.error("No se puede calcular correctamente ");
                         
-                        mensajeError="ERROR 21|Se encontraron mas de 1 documento de Ingreso ligado al documento de Egreso " + padre.getCfds().getUuid() + "para el documento con folio: " +folio + ", serie: " + serie;
+                        mensajeError="ERROR 21|Se encontraron mas de 1 documento de Ingreso ligado al documento de Egreso " + padre.getUuidEgreso() + "para el documento con folio: " +folio + ", serie: " + serie;
                         
                         listaLinea21.add(0, mensajeError);
                         return listaLinea21;

@@ -25,14 +25,5 @@
     <mapping resource="com/iqtb/POJOs/DocumentosRecibidos.hbm.xml"/>
     <mapping resource="com/iqtb/POJOs/Xmls.hbm.xml"/>
     <mapping resource="com/iqtb/POJOs/RegimenFiscal.hbm.xml"/>
-    <mapping resource="com/iqtb/POJOs/CfdisPagos.hbm.xml"/>
-    <mapping resource="com/iqtb/POJOs/Pagos.hbm.xml"/>
-    <mapping resource="com/iqtb/POJOs/RetencionesP.hbm.xml"/>
-    <mapping resource="com/iqtb/POJOs/TrasladosP.hbm.xml"/>
-    <mapping resource="com/iqtb/POJOs/DocumentosRelacionadosP.hbm.xml"/>
-    <mapping resource="com/iqtb/POJOs/RetencionesDr.hbm.xml"/>
-    <mapping resource="com/iqtb/POJOs/TrasladosDr.hbm.xml"/>
-    <mapping resource="com/iqtb/POJOs/CfdisRelacionadosPadre.hbm.xml"/>
-    <mapping resource="com/iqtb/POJOs/CfdisRelacionadosHijo.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
